@@ -146,9 +146,14 @@ export default function HtmlEntityEncoderPage() {
 
   const encoded = useMemo(
     () => encodeHtml(input),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [input, mode, useNamedEntities]
   );
-  const decoded = useMemo(() => decodeHtml(input), [input]);
+  const decoded = useMemo(
+    () => decodeHtml(input),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [input]
+  );
 
   const copyToClipboard = async (text: string) => {
     await navigator.clipboard.writeText(text);

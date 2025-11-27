@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useMemo } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 
 type ImageFormat = "image/png" | "image/jpeg" | "image/webp";
@@ -23,17 +23,23 @@ export default function ImageFormatConverterPage() {
   const [error, setError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const formatLabels: Record<ImageFormat, string> = {
-    "image/png": "PNG",
-    "image/jpeg": "JPG",
-    "image/webp": "WebP"
-  };
+  const formatLabels: Record<ImageFormat, string> = useMemo(
+    () => ({
+      "image/png": "PNG",
+      "image/jpeg": "JPG",
+      "image/webp": "WebP"
+    }),
+    []
+  );
 
-  const formatExtensions: Record<ImageFormat, string> = {
-    "image/png": ".png",
-    "image/jpeg": ".jpg",
-    "image/webp": ".webp"
-  };
+  const formatExtensions: Record<ImageFormat, string> = useMemo(
+    () => ({
+      "image/png": ".png",
+      "image/jpeg": ".jpg",
+      "image/webp": ".webp"
+    }),
+    []
+  );
 
   const handleFileSelect = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -157,7 +163,7 @@ export default function ImageFormatConverterPage() {
     const baseName = sourceImage.file.name.replace(/\.[^.]+$/, "");
     a.download = baseName + formatExtensions[outputFormat];
     a.click();
-  }, [convertedUrl, sourceImage, outputFormat]);
+  }, [convertedUrl, sourceImage, outputFormat, formatExtensions]);
 
   const formatSize = (bytes: number): string => {
     if (bytes < 1024) {
@@ -229,6 +235,7 @@ export default function ImageFormatConverterPage() {
         {/* Source image info */}
         {sourceImage && (
           <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={sourceImage.url}
               alt="Source"
@@ -372,6 +379,7 @@ export default function ImageFormatConverterPage() {
               </button>
             </div>
             <div className="p-4 bg-white flex justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={convertedUrl}
                 alt="Converted"

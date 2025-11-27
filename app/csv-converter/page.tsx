@@ -1,6 +1,6 @@
 "use client";
 
-import Papa from "papaparse";
+import { parse as parseCsv } from "papaparse";
 import { useState, useMemo, useCallback } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 
@@ -20,7 +20,7 @@ export default function CsvConverterPage() {
     }
 
     try {
-      const result = Papa.parse(input, {
+      const result = parseCsv(input, {
         delimiter: delimiter === "auto" ? undefined : delimiter,
         header: hasHeader,
         skipEmptyLines: true

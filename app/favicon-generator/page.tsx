@@ -232,6 +232,7 @@ export default function FaviconGeneratorPage() {
         {/* Source image preview */}
         {sourceImage && (
           <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={sourceImage}
               alt="Source"
@@ -296,6 +297,7 @@ export default function FaviconGeneratorPage() {
                 >
                   <div className="h-16 flex items-center justify-center mb-2">
                     {favicon.dataUrl && (
+                      // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={favicon.dataUrl}
                         alt={`${favicon.size}x${favicon.size}`}
