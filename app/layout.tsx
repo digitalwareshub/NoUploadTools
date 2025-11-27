@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "NoUploadTools — Privacy-First Browser Utilities",
     description:
       "Convert images to PDF and use other privacy-first tools without uploading files. Everything runs locally in your browser.",
-    images: ["/og-image.png"]
+    images: ["/twitter-image.png"]
   },
   icons: {
     icon: [

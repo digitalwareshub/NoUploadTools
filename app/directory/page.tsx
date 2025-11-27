@@ -17,7 +17,22 @@ export const metadata: Metadata = {
     type: "website",
     title: "All Tools Directory | NoUploadTools",
     description:
-      "Browse all privacy-first browser utilities on NoUploadTools. Convert PDFs, images, text and more without uploading files to servers."
+      "Browse all privacy-first browser utilities on NoUploadTools. Convert PDFs, images, text and more without uploading files to servers.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "NoUploadTools - All Tools Directory"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "All Tools Directory | NoUploadTools",
+    description:
+      "Browse all privacy-first browser utilities on NoUploadTools. Convert PDFs, images, text and more without uploading files to servers.",
+    images: ["/twitter-image.png"]
   }
 };
 

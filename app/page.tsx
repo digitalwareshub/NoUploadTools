@@ -16,7 +16,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: siteUrl,
-    type: "website"
+    type: "website",
+    title: "NoUploadTools — Privacy-First Browser Utilities",
+    description:
+      "Convert images to PDF, compress PDFs, and use other privacy-first tools without uploading files. Everything runs locally in your browser for maximum security.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "NoUploadTools - Privacy-First Browser Utilities"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NoUploadTools — Privacy-First Browser Utilities",
+    description:
+      "Convert images to PDF, compress PDFs, and use other privacy-first tools without uploading files. Everything runs locally in your browser for maximum security.",
+    images: ["/twitter-image.png"]
   }
 };
 

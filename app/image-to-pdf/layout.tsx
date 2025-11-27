@@ -24,7 +24,22 @@ export const metadata: Metadata = {
     type: "website",
     title: "Image to PDF Converter - No Upload Required",
     description:
-      "Convert JPG and PNG images into a single PDF file. All processing happens in your browser. No uploads, completely private."
+      "Convert JPG and PNG images into a single PDF file. All processing happens in your browser. No uploads, completely private.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Image to PDF Converter - NoUploadTools"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Image to PDF Converter - No Upload Required",
+    description:
+      "Convert JPG and PNG images into a single PDF file. All processing happens in your browser. No uploads, completely private.",
+    images: ["/twitter-image.png"]
   }
 };
 

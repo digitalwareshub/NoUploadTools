@@ -16,7 +16,22 @@ export const metadata: Metadata = {
     type: "website",
     title: "Blog - Privacy & Security Tips | NoUploadTools",
     description:
-      "Short notes on privacy, client-side tools and safer everyday workflows."
+      "Short notes on privacy, client-side tools and safer everyday workflows.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "NoUploadTools Blog - Privacy & Security Tips"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog - Privacy & Security Tips | NoUploadTools",
+    description:
+      "Short notes on privacy, client-side tools and safer everyday workflows.",
+    images: ["/twitter-image.png"]
   }
 };
 

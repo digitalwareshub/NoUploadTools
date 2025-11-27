@@ -12,7 +12,24 @@ export const metadata: Metadata = {
   openGraph: {
     url: `${siteUrl}/privacy/`,
     type: "website",
-    title: "Privacy Policy | NoUploadTools"
+    title: "Privacy Policy | NoUploadTools",
+    description:
+      "Learn how NoUploadTools protects your privacy. Our tools run entirely in your browser without uploading files to servers.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "NoUploadTools Privacy Policy"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | NoUploadTools",
+    description:
+      "Learn how NoUploadTools protects your privacy. Our tools run entirely in your browser without uploading files to servers.",
+    images: ["/twitter-image.png"]
   }
 };
 

@@ -12,7 +12,24 @@ export const metadata: Metadata = {
   openGraph: {
     url: `${siteUrl}/terms/`,
     type: "website",
-    title: "Terms of Service | NoUploadTools"
+    title: "Terms of Service | NoUploadTools",
+    description:
+      "Terms and conditions for using NoUploadTools. Understand your rights and responsibilities when using our privacy-first browser utilities.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "NoUploadTools Terms of Service"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service | NoUploadTools",
+    description:
+      "Terms and conditions for using NoUploadTools. Understand your rights and responsibilities when using our privacy-first browser utilities.",
+    images: ["/twitter-image.png"]
   }
 };
 
