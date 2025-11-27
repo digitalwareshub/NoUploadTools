@@ -45,11 +45,11 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "metadata-remover",
-    path: "/metadata-remover/",
+    path: "/metadata-remover",
     name: "Metadata Remover",
     description: "Remove hidden metadata from documents before sharing.",
     category: "pdf",
-    status: "soon"
+    status: "live"
   },
 
   // Existing misc/dev/text tools (status soon for now)
@@ -63,27 +63,27 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "hash-generator",
-    path: "/hash-generator/",
+    path: "/hash-generator",
     name: "Hash Generator",
     description: "Compute file and text hashes in your browser.",
     category: "dev",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "base64-encoder",
-    path: "/base64-encoder/",
+    path: "/base64-encoder",
     name: "Base64 Encoder",
     description: "Encode or decode Base64 text locally.",
     category: "text",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "json-formatter",
-    path: "/json-formatter/",
+    path: "/json-formatter",
     name: "JSON Formatter",
     description: "Pretty-print and validate JSON safely.",
     category: "dev",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "text-diff",
@@ -95,11 +95,11 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "qr-generator",
-    path: "/qr-generator/",
+    path: "/qr-generator",
     name: "QR Generator",
     description: "Create QR codes directly in your browser.",
     category: "misc",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "lorem-ipsum",
@@ -119,11 +119,11 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "image-compressor",
-    path: "/image-compressor/",
+    path: "/image-compressor",
     name: "Image Compressor",
     description: "Compress images in the browser before sharing.",
-    category: "pdf",
-    status: "soon"
+    category: "misc",
+    status: "live"
   },
   {
     slug: "secure-password-checker",
@@ -207,19 +207,19 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "word-counter",
-    path: "/word-counter/",
+    path: "/word-counter",
     name: "Word Counter",
     description: "Count words, characters and lines.",
     category: "text",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "case-converter",
-    path: "/case-converter/",
+    path: "/case-converter",
     name: "Case Converter",
     description: "Convert text between UPPER, lower, Title case.",
     category: "text",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "html-entity-encoder",
