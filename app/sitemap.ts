@@ -12,6 +12,15 @@ const contentDates = {
   compressPdf: "2024-11-28",
   mergePdf: "2024-11-28",
   passwordGenerator: "2024-11-28",
+  // New tools added Nov 28, 2024
+  metadataRemover: "2024-11-28",
+  imageCompressor: "2024-11-28",
+  qrGenerator: "2024-11-28",
+  base64Encoder: "2024-11-28",
+  hashGenerator: "2024-11-28",
+  jsonFormatter: "2024-11-28",
+  wordCounter: "2024-11-28",
+  caseConverter: "2024-11-28",
   directory: "2024-11-25",
   privacy: "2024-11-20",
   terms: "2024-11-20",
@@ -60,6 +69,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .map((t) => {
       // Determine last modified date based on tool
       let lastMod = contentDates.homepage;
+
+      // Original tools
       if (t.slug === "image-to-pdf") {
         lastMod = contentDates.imageToPdf;
       } else if (t.slug === "pdf-to-image") {
@@ -70,6 +81,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastMod = contentDates.mergePdf;
       } else if (t.slug === "password-generator") {
         lastMod = contentDates.passwordGenerator;
+      }
+      // New tools added Nov 28
+      else if (t.slug === "metadata-remover") {
+        lastMod = contentDates.metadataRemover;
+      } else if (t.slug === "image-compressor") {
+        lastMod = contentDates.imageCompressor;
+      } else if (t.slug === "qr-generator") {
+        lastMod = contentDates.qrGenerator;
+      } else if (t.slug === "base64-encoder") {
+        lastMod = contentDates.base64Encoder;
+      } else if (t.slug === "hash-generator") {
+        lastMod = contentDates.hashGenerator;
+      } else if (t.slug === "json-formatter") {
+        lastMod = contentDates.jsonFormatter;
+      } else if (t.slug === "word-counter") {
+        lastMod = contentDates.wordCounter;
+      } else if (t.slug === "case-converter") {
+        lastMod = contentDates.caseConverter;
       }
 
       return {
