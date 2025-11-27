@@ -57,26 +57,50 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Does anything get uploaded?",
+      name: "How does image to PDF conversion work?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. All processing happens in your browser using JavaScript. Files are never sent to our servers."
+        text: "All processing happens locally in your browser using JavaScript. When you select images, they're read directly from your device, converted to PDF format, and saved back to your device. No files are ever uploaded to any server."
       }
     },
     {
       "@type": "Question",
-      name: "Can I use this offline?",
+      name: "Is my data safe when using this tool?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "After the page has fully loaded once, your browser can usually run the tool again without a network connection, as long as it keeps the files cached."
+        text: "Yes, completely safe. Your files never leave your device. Everything runs client-side in your browser, so there's no risk of data being intercepted, stored, or shared with third parties."
       }
     },
     {
       "@type": "Question",
-      name: "Is there a file size limit?",
+      name: "What image formats are supported?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Large images require more memory, and every browser has practical limits. If you try to convert extremely large images or many pages at once, you may hit those limits."
+        text: "We support all common image formats including JPG, JPEG, PNG, WEBP, GIF, BMP, and more. If your browser can display the image, our tool can convert it to PDF."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Can I convert multiple images at once?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes! You can select multiple images at once or drag and drop them. All images will be combined into a single PDF in the order you arrange them."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "What page sizes are available?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We offer A4 (standard international), Letter (US standard), and Fit (adjusts to image size). You can also choose portrait or landscape orientation, or let the tool auto-detect based on image dimensions."
+      }
+    },
+    {
+      "@type": "Question",
+      name: "Do I need to install any software?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No installation required. This is a web-based tool that works directly in your browser. Just visit the page and start converting."
       }
     }
   ]
