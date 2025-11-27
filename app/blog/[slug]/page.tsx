@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AdPlaceholder } from "../../../components/AdPlaceholder";
 import { StructuredData } from "../../../components/StructuredData";
-import { blogPosts } from "../../../lib/tools";
+import { blogPosts, type BlogPost } from "../../../lib/tools";
 
 const siteUrl = "https://nouploadtools.com";
 
@@ -19,6 +19,7 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: post.title,
     description: post.description,
+    keywords: post.keywords,
     alternates: {
       canonical: `${siteUrl}/blog/${post.slug}/`
     },
@@ -33,6 +34,38 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
+function renderContent(content: BlogPost["content"]) {
+  return content.map((block, index) => {
+    switch (block.type) {
+      case "heading":
+        return (
+          <h2
+            key={index}
+            className="mt-6 text-xl font-semibold tracking-tight text-gray-900"
+          >
+            {block.text}
+          </h2>
+        );
+      case "paragraph":
+        return (
+          <p key={index} className="leading-relaxed">
+            {block.text}
+          </p>
+        );
+      case "list":
+        return (
+          <ul key={index} className="list-disc space-y-1 pl-6">
+            {block.items?.map((item, itemIndex) => (
+              <li key={itemIndex}>{item}</li>
+            ))}
+          </ul>
+        );
+      default:
+        return null;
+    }
+  });
+}
+
 export default function BlogPostPage({ params }: Props) {
   const post = blogPosts.find((p) => p.slug === params.slug);
   if (!post) {
@@ -44,6 +77,7 @@ export default function BlogPostPage({ params }: Props) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
+    keywords: post.keywords.join(", "),
     url: `${siteUrl}/blog/${post.slug}/`,
     datePublished: new Date().toISOString(),
     dateModified: new Date().toISOString(),
@@ -70,38 +104,27 @@ export default function BlogPostPage({ params }: Props) {
   return (
     <>
       <StructuredData data={blogPostSchema} />
-      <div className="space-y-4 text-base text-gray-800">
-        <h1 className="text-3xl font-semibold tracking-tight">{post.title}</h1>
-        <p className="text-sm text-gray-700">{post.description}</p>
+      <article className="space-y-4 text-base text-gray-800">
+        <header>
+          <h1 className="text-3xl font-semibold tracking-tight">
+            {post.title}
+          </h1>
+          <p className="mt-2 text-lg text-gray-600">{post.description}</p>
+        </header>
 
         <AdPlaceholder label="In-article ad space" />
 
-        <div className="space-y-3 text-base text-gray-800">
-          <p>
-            This is placeholder content for the article &ldquo;{post.title}
-            &rdquo;. Replace it with a real write‑up later. For now, use this
-            page to help search engines understand that NoUploadTools is focused
-            on privacy, client‑ side processing and safer document handling.
-          </p>
-          <p>
-            Traditional online tools take your files, send them to a remote
-            server, process them there and then return a result. That model can
-            be convenient, but it also concentrates risk: a single breach or
-            misused log can expose many sensitive documents at once.
-          </p>
-          <p>
-            Client‑side tools invert that pattern. Instead of shipping files to
-            a server, the logic is shipped to your browser. Modern JavaScript
-            runtimes can resize images, generate PDFs, encrypt data and more
-            directly on your device. NoUploadTools is built around that idea.
-          </p>
-          <p>
-            As you expand this article, you can add concrete tips, threat models
-            and simple checklists for people who handle private information
-            every day.
-          </p>
+        <div className="space-y-4 text-base text-gray-800">
+          {renderContent(post.content)}
         </div>
-      </div>
+
+        <footer className="mt-8 border-t border-gray-200 pt-6">
+          <p className="text-sm text-gray-600">
+            Published by NoUploadTools. All our tools process files locally in
+            your browser for maximum privacy.
+          </p>
+        </footer>
+      </article>
     </>
   );
 }
