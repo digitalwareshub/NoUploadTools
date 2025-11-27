@@ -6,7 +6,7 @@ const baseUrl = "https://nouploadtools.com";
 // Content modification dates for accurate lastmod values
 // These should be updated when content actually changes
 const contentDates = {
-  homepage: "2024-11-25",
+  homepage: "2025-11-27",
   imageToPdf: "2024-11-25",
   pdfToImage: "2024-11-27",
   compressPdf: "2024-11-28",
@@ -21,7 +21,27 @@ const contentDates = {
   jsonFormatter: "2024-11-28",
   wordCounter: "2024-11-28",
   caseConverter: "2024-11-28",
-  directory: "2024-11-25",
+  // Developer tools added Nov 2024
+  textDiff: "2024-11-28",
+  loremIpsum: "2024-11-28",
+  markdownEditor: "2024-11-28",
+  colorPicker: "2024-11-28",
+  uuidGenerator: "2024-11-28",
+  urlEncoder: "2024-11-28",
+  // Batch 2 & 3 tools added Nov 27, 2025
+  fileEncryptor: "2025-11-27",
+  securePasswordChecker: "2025-11-27",
+  textEncryptor: "2025-11-27",
+  csvConverter: "2025-11-27",
+  regexTester: "2025-11-27",
+  htmlEntityEncoder: "2025-11-27",
+  imageFormatConverter: "2025-11-27",
+  codeBeautifier: "2025-11-27",
+  faviconGenerator: "2025-11-27",
+  unitConverter: "2025-11-27",
+  timerStopwatch: "2025-11-27",
+  svgOptimizer: "2025-11-27",
+  directory: "2025-11-27",
   privacy: "2024-11-20",
   terms: "2024-11-20",
   blog: "2024-11-26"
@@ -99,6 +119,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastMod = contentDates.wordCounter;
       } else if (t.slug === "case-converter") {
         lastMod = contentDates.caseConverter;
+      }
+      // Developer tools batch
+      else if (t.slug === "text-diff") {
+        lastMod = contentDates.textDiff;
+      } else if (t.slug === "lorem-ipsum") {
+        lastMod = contentDates.loremIpsum;
+      } else if (t.slug === "markdown-editor") {
+        lastMod = contentDates.markdownEditor;
+      } else if (t.slug === "color-picker") {
+        lastMod = contentDates.colorPicker;
+      } else if (t.slug === "uuid-generator") {
+        lastMod = contentDates.uuidGenerator;
+      } else if (t.slug === "url-encoder") {
+        lastMod = contentDates.urlEncoder;
+      }
+      // Final batch tools Nov 27, 2025
+      else if (t.slug === "file-encryptor") {
+        lastMod = contentDates.fileEncryptor;
+      } else if (t.slug === "secure-password-checker") {
+        lastMod = contentDates.securePasswordChecker;
+      } else if (t.slug === "text-encryptor") {
+        lastMod = contentDates.textEncryptor;
+      } else if (t.slug === "csv-converter") {
+        lastMod = contentDates.csvConverter;
+      } else if (t.slug === "regex-tester") {
+        lastMod = contentDates.regexTester;
+      } else if (t.slug === "html-entity-encoder") {
+        lastMod = contentDates.htmlEntityEncoder;
+      } else if (t.slug === "image-format-converter") {
+        lastMod = contentDates.imageFormatConverter;
+      } else if (t.slug === "code-beautifier") {
+        lastMod = contentDates.codeBeautifier;
+      } else if (t.slug === "favicon-generator") {
+        lastMod = contentDates.faviconGenerator;
+      } else if (t.slug === "unit-converter") {
+        lastMod = contentDates.unitConverter;
+      } else if (t.slug === "timer-stopwatch") {
+        lastMod = contentDates.timerStopwatch;
+      } else if (t.slug === "svg-optimizer") {
+        lastMod = contentDates.svgOptimizer;
       }
 
       return {
