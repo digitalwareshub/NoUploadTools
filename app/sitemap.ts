@@ -6,7 +6,7 @@ const baseUrl = "https://nouploadtools.com";
 // Content modification dates for accurate lastmod values
 // These should be updated when content actually changes
 const contentDates = {
-  homepage: "2024-11-25",
+  homepage: "2025-11-27",
   imageToPdf: "2024-11-25",
   pdfToImage: "2024-11-27",
   compressPdf: "2024-11-28",
@@ -28,6 +28,19 @@ const contentDates = {
   colorPicker: "2024-11-28",
   uuidGenerator: "2024-11-28",
   urlEncoder: "2024-11-28",
+  // Batch 3 tools added Nov 28, 2025
+  fileEncryptor: "2025-11-28",
+  securePasswordChecker: "2025-11-28",
+  textEncryptor: "2025-11-28",
+  csvConverter: "2025-11-28",
+  regexTester: "2025-11-28",
+  htmlEntityEncoder: "2025-11-28",
+  imageFormatConverter: "2025-11-28",
+  codeBeautifier: "2025-11-28",
+  faviconGenerator: "2025-11-28",
+  unitConverter: "2025-11-28",
+  timerStopwatch: "2025-11-28",
+  svgOptimizer: "2025-11-28",
   directory: "2024-11-25",
   privacy: "2024-11-20",
   terms: "2024-11-20",
@@ -120,6 +133,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastMod = contentDates.uuidGenerator;
       } else if (t.slug === "url-encoder") {
         lastMod = contentDates.urlEncoder;
+      }
+      // Final batch tools Nov 28, 2025
+      else if (t.slug === "file-encryptor") {
+        lastMod = contentDates.fileEncryptor;
+      } else if (t.slug === "secure-password-checker") {
+        lastMod = contentDates.securePasswordChecker;
+      } else if (t.slug === "text-encryptor") {
+        lastMod = contentDates.textEncryptor;
+      } else if (t.slug === "csv-converter") {
+        lastMod = contentDates.csvConverter;
+      } else if (t.slug === "regex-tester") {
+        lastMod = contentDates.regexTester;
+      } else if (t.slug === "html-entity-encoder") {
+        lastMod = contentDates.htmlEntityEncoder;
+      } else if (t.slug === "image-format-converter") {
+        lastMod = contentDates.imageFormatConverter;
+      } else if (t.slug === "code-beautifier") {
+        lastMod = contentDates.codeBeautifier;
+      } else if (t.slug === "favicon-generator") {
+        lastMod = contentDates.faviconGenerator;
+      } else if (t.slug === "unit-converter") {
+        lastMod = contentDates.unitConverter;
+      } else if (t.slug === "timer-stopwatch") {
+        lastMod = contentDates.timerStopwatch;
+      } else if (t.slug === "svg-optimizer") {
+        lastMod = contentDates.svgOptimizer;
       }
 
       return {

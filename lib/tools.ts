@@ -111,11 +111,11 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "file-encryptor",
-    path: "/file-encryptor/",
+    path: "/file-encryptor",
     name: "File Encryptor",
     description: "Encrypt files with a password in your browser.",
     category: "dev",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "image-compressor",
@@ -127,19 +127,19 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "secure-password-checker",
-    path: "/secure-password-checker/",
+    path: "/secure-password-checker",
     name: "Secure Password Checker",
     description: "Check password strength client-side.",
     category: "dev",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "text-encryptor",
-    path: "/text-encryptor/",
+    path: "/text-encryptor",
     name: "Text Encryptor",
     description: "Encrypt sensitive text locally.",
     category: "text",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "markdown-editor",
@@ -159,19 +159,19 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "csv-converter",
-    path: "/csv-converter/",
+    path: "/csv-converter",
     name: "CSV Converter",
     description: "Convert CSV to other formats locally.",
     category: "dev",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "regex-tester",
-    path: "/regex-tester/",
+    path: "/regex-tester",
     name: "Regex Tester",
     description: "Test regular expressions against sample text.",
     category: "dev",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "file-splitter",
@@ -183,27 +183,27 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "favicon-generator",
-    path: "/favicon-generator/",
+    path: "/favicon-generator",
     name: "Favicon Generator",
     description: "Generate favicon files from an image.",
     category: "misc",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "image-format-converter",
-    path: "/image-format-converter/",
+    path: "/image-format-converter",
     name: "Image Format Converter",
     description: "Convert between common image formats locally.",
-    category: "pdf",
-    status: "soon"
+    category: "misc",
+    status: "live"
   },
   {
     slug: "code-beautifier",
-    path: "/code-beautifier/",
+    path: "/code-beautifier",
     name: "Code Beautifier",
     description: "Format and tidy code snippets in the browser.",
     category: "dev",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "word-counter",
@@ -223,35 +223,35 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "html-entity-encoder",
-    path: "/html-entity-encoder/",
+    path: "/html-entity-encoder",
     name: "HTML Entity Encoder",
     description: "Encode or decode HTML entities.",
     category: "dev",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "unit-converter",
-    path: "/unit-converter/",
+    path: "/unit-converter",
     name: "Unit Converter",
     description: "Convert between common units offline.",
     category: "misc",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "timer-stopwatch",
-    path: "/timer-stopwatch/",
+    path: "/timer-stopwatch",
     name: "Timer & Stopwatch",
     description: "Simple timer and stopwatch in your browser.",
     category: "misc",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "svg-optimizer",
-    path: "/svg-optimizer/",
+    path: "/svg-optimizer",
     name: "SVG Optimizer",
     description: "Clean and minify SVG files client-side.",
     category: "dev",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "barcode-scanner",
