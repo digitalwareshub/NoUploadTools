@@ -33,7 +33,7 @@ export const tools: ToolMeta[] = [
     name: "PDF to Image",
     description: "Turn each PDF page into an image in your browser.",
     category: "pdf",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "merge-pdf",
