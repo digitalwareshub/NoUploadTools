@@ -76,9 +76,15 @@ export default function DirectoryPage() {
                     </Link>
                     <p className="text-sm text-gray-600">{tool.description}</p>
                   </div>
-                  <div className="text-xs uppercase tracking-wide text-gray-500">
-                    {tool.status === "live" ? "Live" : "Coming soon"}
-                  </div>
+                  {tool.status === "live" ? (
+                    <span className="rounded-full bg-green-100 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-green-700">
+                      Live
+                    </span>
+                  ) : (
+                    <span className="text-xs uppercase tracking-wide text-gray-500">
+                      Coming soon
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

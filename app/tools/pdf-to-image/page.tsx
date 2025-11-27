@@ -96,7 +96,32 @@ export default function PdfToImagePage() {
       pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
       const arrayBuffer = await file.arrayBuffer();
-      const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise;
+
+      let pdf;
+      try {
+        // Try loading with standard options first
+        const loadingTask = pdfjs.getDocument({
+          data: arrayBuffer,
+          stopAtErrors: false,
+          isEvalSupported: false,
+          disableAutoFetch: false,
+          disableStream: false
+        });
+        pdf = await loadingTask.promise;
+      } catch (firstError) {
+        // Fallback: try with absolute minimal options
+        try {
+          const loadingTask = pdfjs.getDocument({
+            data: arrayBuffer,
+            verbosity: 0
+          });
+          pdf = await loadingTask.promise;
+        } catch (secondError) {
+          throw new Error(
+            `Cannot parse this PDF: ${secondError instanceof Error ? secondError.message : String(secondError)}`
+          );
+        }
+      }
       const numPages = pdf.numPages;
 
       setProgress({ current: 0, total: numPages });
@@ -127,11 +152,17 @@ export default function PdfToImagePage() {
           context.fillRect(0, 0, canvas.width, canvas.height);
         }
 
-        await page.render({
+        // Render with error handling options
+        const renderContext = {
           canvasContext: context,
           viewport: viewport,
-          canvas: canvas
-        }).promise;
+          canvas: canvas,
+          intent: "display" as const,
+          enableWebGL: false,
+          renderInteractiveForms: false
+        };
+
+        await page.render(renderContext).promise;
 
         const mimeType = format === "jpg" ? "image/jpeg" : "image/png";
         const dataUrl = canvas.toDataURL(
@@ -396,34 +427,36 @@ export default function PdfToImagePage() {
               Download All as ZIP
             </button>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {convertedPages.map((page) => (
-              <div
-                key={page.pageNumber}
-                className="overflow-hidden rounded-md border border-gray-200 bg-white"
-              >
-                <div className="aspect-[3/4] overflow-hidden bg-gray-100">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={page.dataUrl}
-                    alt={`Page ${page.pageNumber}`}
-                    className="h-full w-full object-contain"
-                  />
+          <div className="max-h-[600px] overflow-y-auto rounded-md border border-gray-200 p-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {convertedPages.map((page) => (
+                <div
+                  key={page.pageNumber}
+                  className="overflow-hidden rounded-md border border-gray-200 bg-white"
+                >
+                  <div className="aspect-[3/4] overflow-hidden bg-gray-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={page.dataUrl}
+                      alt={`Page ${page.pageNumber}`}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div className="flex items-center justify-between border-t border-gray-200 p-2">
+                    <span className="text-xs text-gray-600">
+                      Page {page.pageNumber} ({formatFileSize(page.blob.size)})
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => downloadPage(page)}
+                      className="rounded border border-gray-300 px-2 py-1 text-xs hover:bg-gray-100"
+                    >
+                      Download
+                    </button>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between border-t border-gray-200 p-2">
-                  <span className="text-xs text-gray-600">
-                    Page {page.pageNumber} ({formatFileSize(page.blob.size)})
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => downloadPage(page)}
-                    className="rounded border border-gray-300 px-2 py-1 text-xs hover:bg-gray-100"
-                  >
-                    Download
-                  </button>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
       )}
