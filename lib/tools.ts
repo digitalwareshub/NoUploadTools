@@ -25,7 +25,7 @@ export const tools: ToolMeta[] = [
     name: "Compress PDF",
     description: "Reduce PDF file size locally without uploading.",
     category: "pdf",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "pdf-to-image",
@@ -41,7 +41,7 @@ export const tools: ToolMeta[] = [
     name: "Merge PDF",
     description: "Combine multiple PDFs into one file client-side.",
     category: "pdf",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "metadata-remover",
@@ -55,11 +55,11 @@ export const tools: ToolMeta[] = [
   // Existing misc/dev/text tools (status soon for now)
   {
     slug: "password-generator",
-    path: "/password-generator/",
+    path: "/password-generator",
     name: "Password Generator",
     description: "Generate strong random passwords locally.",
     category: "dev",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "hash-generator",
