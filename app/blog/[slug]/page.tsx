@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { blogPosts } from "../../../lib/tools";
 import { AdPlaceholder } from "../../../components/AdPlaceholder";
+import { blogPosts } from "../../../lib/tools";
 
 type Props = {
   params: { slug: string };
@@ -8,7 +8,9 @@ type Props = {
 
 export default function BlogPostPage({ params }: Props) {
   const post = blogPosts.find((p) => p.slug === params.slug);
-  if (!post) return notFound();
+  if (!post) {
+    return notFound();
+  }
 
   return (
     <div className="space-y-4 text-base text-gray-800">
@@ -19,10 +21,10 @@ export default function BlogPostPage({ params }: Props) {
 
       <div className="space-y-3 text-base text-gray-800">
         <p>
-          This is placeholder content for the article "{post.title}". Replace it
-          with a real write‑up later. For now, use this page to help search
-          engines understand that NoUploadTools is focused on privacy, client‑
-          side processing and safer document handling.
+          This is placeholder content for the article &ldquo;{post.title}
+          &rdquo;. Replace it with a real write‑up later. For now, use this page
+          to help search engines understand that NoUploadTools is focused on
+          privacy, client‑ side processing and safer document handling.
         </p>
         <p>
           Traditional online tools take your files, send them to a remote
@@ -32,9 +34,9 @@ export default function BlogPostPage({ params }: Props) {
         </p>
         <p>
           Client‑side tools invert that pattern. Instead of shipping files to a
-          server, the logic is shipped to your browser. Modern JavaScript runtimes
-          can resize images, generate PDFs, encrypt data and more directly on
-          your device. NoUploadTools is built around that idea.
+          server, the logic is shipped to your browser. Modern JavaScript
+          runtimes can resize images, generate PDFs, encrypt data and more
+          directly on your device. NoUploadTools is built around that idea.
         </p>
         <p>
           As you expand this article, you can add concrete tips, threat models

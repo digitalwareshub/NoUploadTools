@@ -1,5 +1,5 @@
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { tools } from "../../lib/tools";
 
 type Props = {
@@ -9,7 +9,9 @@ type Props = {
 export default function ToolPlaceholderTopLevel({ params }: Props) {
   const slug = params.slug;
   const tool = tools.find((t) => t.path === `/${slug}/`);
-  if (!tool) return notFound();
+  if (!tool) {
+    return notFound();
+  }
 
   return (
     <div className="space-y-4 text-base text-gray-800">

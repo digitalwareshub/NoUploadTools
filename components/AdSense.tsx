@@ -17,12 +17,13 @@ export function AdSense({
   adFormat = "auto",
   fullWidthResponsive = true,
   style = { display: "block" },
-  adTest = undefined, // Set to "on" for testing
+  adTest = undefined // Set to "on" for testing
 }: AdSenseProps) {
   useEffect(() => {
     try {
       // Push ad to AdSense
       if (typeof window !== "undefined") {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
           {}
         );

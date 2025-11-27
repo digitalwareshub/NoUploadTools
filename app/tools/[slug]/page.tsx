@@ -1,5 +1,5 @@
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { tools } from "../../../lib/tools";
 
 type Props = {
@@ -9,7 +9,9 @@ type Props = {
 export default function ToolPlaceholderNested({ params }: Props) {
   const slug = params.slug;
   const tool = tools.find((t) => t.path === `/tools/${slug}`);
-  if (!tool) return notFound();
+  if (!tool) {
+    return notFound();
+  }
 
   return (
     <div className="space-y-4 text-base text-gray-800">
@@ -18,8 +20,8 @@ export default function ToolPlaceholderNested({ params }: Props) {
         Coming soon
       </p>
       <p className="text-sm text-gray-700">
-        This PDF tool is planned but not live yet. It will process files in
-        your browser only, without uploading them to a server.
+        This PDF tool is planned but not live yet. It will process files in your
+        browser only, without uploading them to a server.
       </p>
       <p className="text-sm text-gray-700">
         While this page is in progress, you can use the live{" "}

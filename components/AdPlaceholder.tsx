@@ -14,10 +14,7 @@ export function AdPlaceholder({ label, slot, format = "auto" }: Props) {
     return (
       <div className="my-4 flex w-full justify-center">
         <div className="w-full max-w-[970px]">
-          <AdSense 
-            adSlot={slot}
-            adFormat={format}
-          />
+          <AdSense adSlot={slot} adFormat={format} />
         </div>
       </div>
     );

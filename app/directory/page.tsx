@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { tools } from "../../lib/tools";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { tools } from "../../lib/tools";
 
 const categories = [
   { id: "pdf", label: "PDF & Documents" },
@@ -22,7 +22,9 @@ export default function DirectoryPage() {
 
       {categories.map((cat, index) => {
         const list = tools.filter((t) => t.category === cat.id);
-        if (!list.length) return null;
+        if (!list.length) {
+          return null;
+        }
         return (
           <section key={cat.id} className="space-y-2">
             <h2 className="text-xl font-semibold tracking-tight">
@@ -35,15 +37,10 @@ export default function DirectoryPage() {
                   className="flex items-center justify-between px-3 py-2"
                 >
                   <div>
-                    <Link
-                      href={tool.path}
-                      className="font-semibold underline"
-                    >
+                    <Link href={tool.path} className="font-semibold underline">
                       {tool.name}
                     </Link>
-                    <p className="text-sm text-gray-600">
-                      {tool.description}
-                    </p>
+                    <p className="text-sm text-gray-600">{tool.description}</p>
                   </div>
                   <div className="text-xs uppercase tracking-wide text-gray-500">
                     {tool.status === "live" ? "Live" : "Coming soon"}
@@ -51,9 +48,7 @@ export default function DirectoryPage() {
                 </li>
               ))}
             </ul>
-            {index === 0 && (
-              <AdPlaceholder label="In-content ad space" />
-            )}
+            {index === 0 && <AdPlaceholder label="In-content ad space" />}
           </section>
         );
       })}

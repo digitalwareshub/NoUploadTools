@@ -6,7 +6,7 @@ export function Footer() {
   const pdfTools = tools.filter((t) => t.category === "pdf").slice(0, 6);
   const textTools = tools.filter((t) => t.category === "text").slice(0, 6);
   const devTools = tools.filter((t) => t.category === "dev").slice(0, 6);
-  const miscTools = tools.filter((t) => t.category === "misc").slice(0, 6);
+  const _miscTools = tools.filter((t) => t.category === "misc").slice(0, 6);
 
   return (
     <footer className="border-t border-gray-200 bg-gray-50">

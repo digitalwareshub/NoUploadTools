@@ -1,8 +1,8 @@
 "use client";
 
-import { ChangeEvent, useCallback, useState } from "react";
-import { AdPlaceholder } from "../../components/AdPlaceholder";
 import { PDFDocument, StandardFonts } from "pdf-lib";
+import { useCallback, useState, type ChangeEvent } from "react";
+import { AdPlaceholder } from "../../components/AdPlaceholder";
 
 type SelectedFile = {
   id: string;
@@ -24,11 +24,15 @@ export default function ImageToPdfPage() {
 
   const onSelectFiles = (event: ChangeEvent<HTMLInputElement>) => {
     const list = event.target.files;
-    if (!list) return;
+    if (!list) {
+      return;
+    }
     const next: SelectedFile[] = [];
     for (let i = 0; i < list.length; i++) {
       const file = list[i];
-      if (!file.type.startsWith("image/")) continue;
+      if (!file.type.startsWith("image/")) {
+        continue;
+      }
       next.push({
         id: `${file.name}-${file.size}-${file.lastModified}-${Math.random()}`,
         file,
@@ -42,11 +46,15 @@ export default function ImageToPdfPage() {
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     const list = e.dataTransfer.files;
-    if (!list) return;
+    if (!list) {
+      return;
+    }
     const next: SelectedFile[] = [];
     for (let i = 0; i < list.length; i++) {
       const file = list[i];
-      if (!file.type.startsWith("image/")) continue;
+      if (!file.type.startsWith("image/")) {
+        continue;
+      }
       next.push({
         id: `${file.name}-${file.size}-${file.lastModified}-${Math.random()}`,
         file,
@@ -60,10 +68,14 @@ export default function ImageToPdfPage() {
   const move = (id: string, direction: "up" | "down") => {
     setFiles((prev) => {
       const index = prev.findIndex((f) => f.id === id);
-      if (index === -1) return prev;
+      if (index === -1) {
+        return prev;
+      }
       const next = [...prev];
       const targetIndex = direction === "up" ? index - 1 : index + 1;
-      if (targetIndex < 0 || targetIndex >= next.length) return prev;
+      if (targetIndex < 0 || targetIndex >= next.length) {
+        return prev;
+      }
       const [item] = next.splice(index, 1);
       next.splice(targetIndex, 0, item);
       return next;
@@ -127,8 +139,12 @@ export default function ImageToPdfPage() {
         }
 
         let marginValue = 0;
-        if (margin === "Small") marginValue = 20;
-        if (margin === "Medium") marginValue = 40;
+        if (margin === "Small") {
+          marginValue = 20;
+        }
+        if (margin === "Medium") {
+          marginValue = 40;
+        }
 
         const page = pdfDoc.addPage([finalWidth, finalHeight]);
 
@@ -162,7 +178,9 @@ export default function ImageToPdfPage() {
       }
 
       const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" });
+      const blob = new Blob([pdfBytes.buffer as ArrayBuffer], {
+        type: "application/pdf"
+      });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
@@ -202,6 +220,8 @@ export default function ImageToPdfPage() {
 
       <form onSubmit={onSubmit} className="space-y-4">
         <div
+          role="button"
+          tabIndex={0}
           onDrop={handleDrop}
           onDragOver={preventDefaults}
           onDragEnter={preventDefaults}
@@ -210,6 +230,13 @@ export default function ImageToPdfPage() {
           onClick={() => {
             const input = document.getElementById("file-input");
             (input as HTMLInputElement | null)?.click();
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              const input = document.getElementById("file-input");
+              (input as HTMLInputElement | null)?.click();
+            }
           }}
         >
           <input
@@ -238,6 +265,7 @@ export default function ImageToPdfPage() {
                   className="flex items-center justify-between rounded-md border border-gray-200 p-2"
                 >
                   <div className="flex items-center gap-2">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={f.previewUrl}
                       alt={f.file.name}
@@ -283,8 +311,11 @@ export default function ImageToPdfPage() {
 
         <div className="grid gap-3 rounded-md border border-gray-200 p-3 text-sm sm:grid-cols-3">
           <div className="space-y-1">
-            <label className="block text-xs font-semibold">Page size</label>
+            <label htmlFor="page-size" className="block text-xs font-semibold">
+              Page size
+            </label>
             <select
+              id="page-size"
               className="w-full rounded-md border border-gray-300 px-2 py-1 text-xs"
               value={pageSize}
               onChange={(e) => setPageSize(e.target.value as PageSize)}
@@ -295,15 +326,17 @@ export default function ImageToPdfPage() {
             </select>
           </div>
           <div className="space-y-1">
-            <label className="block text-xs font-semibold">
+            <label
+              htmlFor="orientation"
+              className="block text-xs font-semibold"
+            >
               Orientation
             </label>
             <select
+              id="orientation"
               className="w-full rounded-md border border-gray-300 px-2 py-1 text-xs"
               value={orientation}
-              onChange={(e) =>
-                setOrientation(e.target.value as Orientation)
-              }
+              onChange={(e) => setOrientation(e.target.value as Orientation)}
             >
               <option value="Auto">Auto</option>
               <option value="Portrait">Portrait</option>
@@ -311,8 +344,11 @@ export default function ImageToPdfPage() {
             </select>
           </div>
           <div className="space-y-1">
-            <label className="block text-xs font-semibold">Margin</label>
+            <label htmlFor="margin" className="block text-xs font-semibold">
+              Margin
+            </label>
             <select
+              id="margin"
               className="w-full rounded-md border border-gray-300 px-2 py-1 text-xs"
               value={margin}
               onChange={(e) => setMargin(e.target.value as Margin)}
@@ -345,9 +381,9 @@ export default function ImageToPdfPage() {
         </p>
         <p className="mt-2 font-semibold">Can I use this offline?</p>
         <p>
-          After the page has fully loaded once, your browser can usually run
-          the tool again without a network connection, as long as it keeps the
-          files cached.
+          After the page has fully loaded once, your browser can usually run the
+          tool again without a network connection, as long as it keeps the files
+          cached.
         </p>
         <p className="mt-2 font-semibold">Is there a file size limit?</p>
         <p>

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Header() {
   return (
@@ -7,11 +7,14 @@ export function Header() {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-center px-4 py-3">
         <div className="hidden w-40 lg:block" aria-hidden="true" />
         <div className="flex w-full max-w-3xl items-center">
-          <Link href="/" className="flex items-center gap-2 text-base font-semibold tracking-tight text-blue-600">
-            <Image 
-              src="/logo.png" 
-              alt="NoUploadTools" 
-              width={24} 
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-base font-semibold tracking-tight text-blue-600"
+          >
+            <Image
+              src="/logo.png"
+              alt="NoUploadTools"
+              width={24}
               height={24}
               className="h-6 w-6"
             />

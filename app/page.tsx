@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ToolCard } from "../components/ToolCard";
 import { AdPlaceholder } from "../components/AdPlaceholder";
+import { ToolCard } from "../components/ToolCard";
 import { tools, blogPosts } from "../lib/tools";
 
 export default function HomePage() {
@@ -118,9 +118,7 @@ export default function HomePage() {
       </section>
 
       <section className="space-y-3 text-base text-gray-700">
-        <h2 className="text-xl font-semibold tracking-tight">
-          From the blog
-        </h2>
+        <h2 className="text-xl font-semibold tracking-tight">From the blog</h2>
         <ul className="space-y-2 text-sm">
           {blogPosts.map((post) => (
             <li key={post.slug}>
