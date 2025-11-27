@@ -87,11 +87,11 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "text-diff",
-    path: "/text-diff/",
+    path: "/text-diff",
     name: "Text Diff",
     description: "Compare two blocks of text side by side.",
     category: "text",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "qr-generator",
@@ -103,11 +103,11 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "lorem-ipsum",
-    path: "/lorem-ipsum/",
+    path: "/lorem-ipsum",
     name: "Lorem Ipsum",
     description: "Generate placeholder text locally.",
     category: "text",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "file-encryptor",
@@ -143,19 +143,19 @@ export const tools: ToolMeta[] = [
   },
   {
     slug: "markdown-editor",
-    path: "/markdown-editor/",
+    path: "/markdown-editor",
     name: "Markdown Editor",
     description: "Write and preview markdown offline.",
     category: "text",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "color-picker",
-    path: "/color-picker/",
+    path: "/color-picker",
     name: "Color Picker",
     description: "Pick and copy colors from the browser.",
     category: "misc",
-    status: "soon"
+    status: "live"
   },
   {
     slug: "csv-converter",
@@ -260,6 +260,22 @@ export const tools: ToolMeta[] = [
     description: "Scan barcodes using your device camera.",
     category: "misc",
     status: "soon"
+  },
+  {
+    slug: "uuid-generator",
+    path: "/uuid-generator",
+    name: "UUID Generator",
+    description: "Generate unique identifiers (UUID v4) locally.",
+    category: "dev",
+    status: "live"
+  },
+  {
+    slug: "url-encoder",
+    path: "/url-encoder",
+    name: "URL Encoder",
+    description: "Encode and decode URLs and query parameters.",
+    category: "dev",
+    status: "live"
   }
 ];
 
