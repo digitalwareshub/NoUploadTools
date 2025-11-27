@@ -216,6 +216,17 @@ export default function ImageToPdfPage() {
         </p>
       </section>
 
+      {/* Privacy & Security Callout */}
+      <section className="space-y-2 rounded-md border border-gray-200 bg-gray-50 p-4 text-sm">
+        <h2 className="font-semibold">🔒 Your Files Stay Private</h2>
+        <ul className="space-y-1 text-gray-700">
+          <li>✓ No uploads to servers</li>
+          <li>✓ Processing happens in your browser</li>
+          <li>✓ Files never leave your device</li>
+          <li>✓ Works offline after page loads</li>
+        </ul>
+      </section>
+
       <AdPlaceholder label="In-page ad space" />
 
       <form onSubmit={onSubmit} className="space-y-4">
@@ -226,7 +237,7 @@ export default function ImageToPdfPage() {
           onDragOver={preventDefaults}
           onDragEnter={preventDefaults}
           onDragLeave={preventDefaults}
-          className="flex cursor-pointer flex-col items-center justify-center rounded-md border border-dashed border-gray-300 px-4 py-8 text-sm text-gray-600"
+          className="flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-400 bg-gray-50 px-4 py-12 text-sm text-gray-700 transition-colors hover:border-gray-600 hover:bg-gray-100"
           onClick={() => {
             const input = document.getElementById("file-input");
             (input as HTMLInputElement | null)?.click();
@@ -247,9 +258,13 @@ export default function ImageToPdfPage() {
             className="hidden"
             onChange={onSelectFiles}
           />
-          <span className="font-semibold">Drop images here</span>
-          <span className="mt-1 text-xs">
+          <span className="text-2xl">📁</span>
+          <span className="mt-2 font-semibold">Drop images here</span>
+          <span className="mt-1 text-xs text-gray-600">
             or click to choose files from your device
+          </span>
+          <span className="mt-2 text-xs text-gray-500">
+            Supports JPG and PNG files
           </span>
         </div>
 
@@ -372,25 +387,175 @@ export default function ImageToPdfPage() {
         </div>
       </form>
 
+      {/* How to Use */}
       <section className="space-y-2 text-sm text-gray-700">
-        <h2 className="text-base font-semibold tracking-tight">FAQ</h2>
-        <p className="font-semibold">Does anything get uploaded?</p>
-        <p>
-          No. All processing happens in your browser using JavaScript. Files are
-          never sent to our servers.
-        </p>
-        <p className="mt-2 font-semibold">Can I use this offline?</p>
-        <p>
-          After the page has fully loaded once, your browser can usually run the
-          tool again without a network connection, as long as it keeps the files
-          cached.
-        </p>
-        <p className="mt-2 font-semibold">Is there a file size limit?</p>
-        <p>
-          Large images require more memory, and every browser has practical
-          limits. If you try to convert extremely large images or many pages at
-          once, you may hit those limits.
-        </p>
+        <h2 className="text-base font-semibold tracking-tight">
+          📋 How to Use
+        </h2>
+        <ol className="list-decimal space-y-2 pl-5">
+          <li>
+            <strong>Select images:</strong> Click the upload area or drag and
+            drop JPG/PNG images
+          </li>
+          <li>
+            <strong>Arrange order:</strong> Use Up/Down buttons to reorder pages
+            in your PDF
+          </li>
+          <li>
+            <strong>Configure settings:</strong> Choose page size, orientation,
+            and margins
+          </li>
+          <li>
+            <strong>Convert:</strong> Click &ldquo;Convert to PDF&rdquo; and
+            your file will download automatically
+          </li>
+        </ol>
+      </section>
+
+      {/* Features */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">⭐ Features</h2>
+        <ul className="grid gap-2 sm:grid-cols-2">
+          <li>📄 Combine multiple images into one PDF</li>
+          <li>🔄 Reorder pages with drag controls</li>
+          <li>📏 A4, Letter, or Fit-to-image sizing</li>
+          <li>🔄 Auto, Portrait, or Landscape orientation</li>
+          <li>📐 Adjustable margins (None, Small, Medium)</li>
+          <li>🖼️ Supports JPG and PNG formats</li>
+          <li>⚡ Fast, instant conversion</li>
+          <li>🔒 100% private and secure</li>
+        </ul>
+      </section>
+
+      {/* FAQ */}
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          ❓ Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">Does anything get uploaded?</p>
+            <p>
+              No. All processing happens in your browser using JavaScript. Files
+              are never sent to our servers. You can even disconnect from the
+              internet after the page loads and the tool will still work.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What image formats are supported?</p>
+            <p>
+              Currently JPG and PNG formats are supported. These are the most
+              common image formats. The tool automatically detects the format
+              and processes it correctly.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I use this offline?</p>
+            <p>
+              After the page has fully loaded once, your browser can usually run
+              the tool again without a network connection, as long as it keeps
+              the files cached.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is there a file size limit?</p>
+            <p>
+              Large images require more memory, and every browser has practical
+              limits. If you try to convert extremely large images or many pages
+              at once, you may hit those limits. For best results, use images
+              under 10MB each and convert fewer than 50 images at a time.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I adjust the quality or compress the PDF?
+            </p>
+            <p>
+              The current version embeds images at their original quality. The
+              resulting PDF size depends on your source images. To reduce file
+              size, compress your images before converting, or use smaller page
+              sizes like A4 instead of &ldquo;Fit to image&rdquo;.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What happens to my images after conversion?
+            </p>
+            <p>
+              Nothing. The images stay in your browser&apos;s memory only during
+              the conversion process. Once you close or refresh the page,
+              everything is cleared. No data is stored anywhere.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I convert a PDF back to images?</p>
+            <p>
+              Yes, we have a separate &ldquo;PDF to Image&rdquo; tool planned.
+              It will work the same way—completely in your browser without
+              uploads. Check the tools directory for updates.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Troubleshooting */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          🔧 Troubleshooting
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">
+              The conversion fails or the page freezes
+            </p>
+            <p>
+              This usually happens with very large images or too many files at
+              once. Try reducing the number of images, or compress them before
+              converting. Close other browser tabs to free up memory.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              My images appear rotated incorrectly
+            </p>
+            <p>
+              Use the Orientation setting to manually choose Portrait or
+              Landscape. The &ldquo;Auto&rdquo; option detects orientation based
+              on image dimensions, but some photos have incorrect metadata.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">The PDF quality looks poor</p>
+            <p>
+              The tool preserves your original image quality. If the PDF looks
+              poor, your source images may be low resolution. Try using
+              higher-quality images or the &ldquo;Fit to image&rdquo; page size
+              to avoid scaling.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I report a bug or request a feature?
+            </p>
+            <p>
+              Yes! This tool is actively maintained. Check our GitHub repository
+              or contact page for feedback options. We regularly add new
+              features based on user requests.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -1,3 +1,21 @@
+import type { Metadata } from "next";
+
+const siteUrl = "https://nouploadtools.com";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Learn how NoUploadTools protects your privacy. Our tools run entirely in your browser without uploading files to servers.",
+  alternates: {
+    canonical: `${siteUrl}/privacy/`
+  },
+  openGraph: {
+    url: `${siteUrl}/privacy/`,
+    type: "website",
+    title: "Privacy Policy | NoUploadTools"
+  }
+};
+
 export default function PrivacyPage() {
   return (
     <div className="space-y-4 text-base text-gray-800">

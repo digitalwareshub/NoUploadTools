@@ -1,5 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { blogPosts } from "../../lib/tools";
+
+const siteUrl = "https://nouploadtools.com";
+
+export const metadata: Metadata = {
+  title: "Blog - Privacy & Security Tips",
+  description:
+    "Short notes on privacy, client-side tools and safer everyday workflows. Learn how to protect your data while working with files online.",
+  alternates: {
+    canonical: `${siteUrl}/blog/`
+  },
+  openGraph: {
+    url: `${siteUrl}/blog/`,
+    type: "website",
+    title: "Blog - Privacy & Security Tips | NoUploadTools",
+    description:
+      "Short notes on privacy, client-side tools and safer everyday workflows."
+  }
+};
 
 export default function BlogIndexPage() {
   return (

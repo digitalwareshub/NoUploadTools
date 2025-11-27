@@ -1,10 +1,34 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tools } from "../../lib/tools";
 
+const siteUrl = "https://nouploadtools.com";
+
 type Props = {
   params: { slug: string };
 };
+
+export function generateMetadata({ params }: Props): Metadata {
+  const tool = tools.find((t) => t.path === `/${params.slug}/`);
+  if (!tool) {
+    return {};
+  }
+
+  return {
+    title: `${tool.name} - Coming Soon`,
+    description: tool.description,
+    alternates: {
+      canonical: `${siteUrl}/${params.slug}/`
+    },
+    openGraph: {
+      url: `${siteUrl}/${params.slug}/`,
+      type: "website",
+      title: `${tool.name} - Coming Soon | NoUploadTools`,
+      description: tool.description
+    }
+  };
+}
 
 export default function ToolPlaceholderTopLevel({ params }: Props) {
   const slug = params.slug;

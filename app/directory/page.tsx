@@ -1,6 +1,25 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 import { tools } from "../../lib/tools";
+
+const siteUrl = "https://nouploadtools.com";
+
+export const metadata: Metadata = {
+  title: "All Tools Directory",
+  description:
+    "Browse all privacy-first browser utilities on NoUploadTools. Convert PDFs, images, text and more without uploading files to servers.",
+  alternates: {
+    canonical: `${siteUrl}/directory/`
+  },
+  openGraph: {
+    url: `${siteUrl}/directory/`,
+    type: "website",
+    title: "All Tools Directory | NoUploadTools",
+    description:
+      "Browse all privacy-first browser utilities on NoUploadTools. Convert PDFs, images, text and more without uploading files to servers."
+  }
+};
 
 const categories = [
   { id: "pdf", label: "PDF & Documents" },
