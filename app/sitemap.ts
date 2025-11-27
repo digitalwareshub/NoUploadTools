@@ -21,6 +21,13 @@ const contentDates = {
   jsonFormatter: "2024-11-28",
   wordCounter: "2024-11-28",
   caseConverter: "2024-11-28",
+  // New tools added Nov 28, 2024 (Batch 2)
+  textDiff: "2024-11-28",
+  loremIpsum: "2024-11-28",
+  markdownEditor: "2024-11-28",
+  colorPicker: "2024-11-28",
+  uuidGenerator: "2024-11-28",
+  urlEncoder: "2024-11-28",
   directory: "2024-11-25",
   privacy: "2024-11-20",
   terms: "2024-11-20",
@@ -99,6 +106,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastMod = contentDates.wordCounter;
       } else if (t.slug === "case-converter") {
         lastMod = contentDates.caseConverter;
+      }
+      // New tools added Nov 28 (Batch 2)
+      else if (t.slug === "text-diff") {
+        lastMod = contentDates.textDiff;
+      } else if (t.slug === "lorem-ipsum") {
+        lastMod = contentDates.loremIpsum;
+      } else if (t.slug === "markdown-editor") {
+        lastMod = contentDates.markdownEditor;
+      } else if (t.slug === "color-picker") {
+        lastMod = contentDates.colorPicker;
+      } else if (t.slug === "uuid-generator") {
+        lastMod = contentDates.uuidGenerator;
+      } else if (t.slug === "url-encoder") {
+        lastMod = contentDates.urlEncoder;
       }
 
       return {
