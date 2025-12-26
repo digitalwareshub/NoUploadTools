@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 const LOREM_WORDS = [
   "lorem",
@@ -253,6 +254,13 @@ export default function LoremIpsumPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Lorem Ipsum" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           Lorem Ipsum Generator
@@ -433,6 +441,84 @@ export default function LoremIpsumPage() {
           non-English to prevent confusion with actual content. This makes it
           ideal for prototypes, mockups, and layout testing.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What is Lorem Ipsum?</p>
+            <p>
+              Lorem Ipsum is placeholder text used in the printing and design
+              industry. It originated from a 1st century BC Latin text by
+              Cicero, though it has been altered over time. Designers use it to
+              demonstrate layouts without distracting viewers with meaningful
+              content.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Why use Lorem Ipsum instead of real text?
+            </p>
+            <p>
+              Lorem Ipsum is used because it has a relatively normal
+              distribution of letters and word lengths, making it look like
+              readable English. This allows viewers to focus on design elements
+              like typography, spacing, and layout rather than being distracted
+              by actual content.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Is this Lorem Ipsum generator free to use?
+            </p>
+            <p>
+              Yes, our Lorem Ipsum generator is completely free with no limits.
+              Generate as much placeholder text as you need for your design
+              projects, websites, or documents without any cost or registration.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I generate Lorem Ipsum in HTML format?
+            </p>
+            <p>
+              Yes, our generator offers both plain text and HTML output options.
+              The HTML format wraps paragraphs in &lt;p&gt; tags, making it
+              ready to paste directly into your web projects.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What&apos;s the classic Lorem Ipsum starting phrase?
+            </p>
+            <p>
+              The classic Lorem Ipsum text begins with &quot;Lorem ipsum dolor
+              sit amet, consectetur adipiscing elit.&quot; This opening is so
+              well-known that many generators include an option to always start
+              with this phrase for familiarity.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Is my generated text stored anywhere?
+            </p>
+            <p>
+              No, all text generation happens in your browser using JavaScript.
+              Nothing is sent to any server, and no generated text is stored or
+              tracked.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

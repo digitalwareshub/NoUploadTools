@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type Mode = "encrypt" | "decrypt";
 
@@ -227,6 +228,13 @@ export default function FileEncryptorPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "File Encryptor" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           File Encryptor
@@ -465,6 +473,81 @@ export default function FileEncryptorPage() {
           extremely slow. Each file uses a unique random salt and IV, so
           encrypting the same file twice produces completely different outputs.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">
+              How secure is AES-256-GCM encryption?
+            </p>
+            <p>
+              AES-256-GCM is a military-grade encryption standard used by
+              governments and financial institutions worldwide. It provides both
+              confidentiality and integrity verification, making it virtually
+              impossible to crack with current technology.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Is my file uploaded to a server for encryption?
+            </p>
+            <p>
+              No, absolutely not. All encryption and decryption happens entirely
+              in your browser using the Web Crypto API. Your files and passwords
+              never leave your device, ensuring complete privacy and security.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What happens if I forget my password?
+            </p>
+            <p>
+              If you forget your password, there is no way to recover the
+              encrypted file. The encryption is designed to be unbreakable
+              without the correct password. Always store your passwords securely
+              in a password manager.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What file types can I encrypt?</p>
+            <p>
+              You can encrypt any file type - documents, images, videos,
+              archives, or any other file. The encryption works on the raw file
+              data regardless of the file format.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What is PBKDF2 key derivation?</p>
+            <p>
+              PBKDF2 (Password-Based Key Derivation Function 2) converts your
+              password into a strong encryption key. It uses 100,000 iterations
+              with SHA-256, making brute-force attacks extremely time-consuming
+              and impractical.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I decrypt files encrypted with this tool elsewhere?
+            </p>
+            <p>
+              Files encrypted with this tool can only be decrypted using this
+              same tool or compatible software that supports AES-256-GCM with
+              the same IV and key derivation parameters. The encrypted file
+              contains all necessary metadata.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

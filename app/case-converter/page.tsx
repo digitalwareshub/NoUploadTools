@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type CaseType =
   | "upper"
@@ -130,6 +131,13 @@ export default function CaseConverterPage() {
 
   return (
     <div className="space-y-6 text-base text-gray-800">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Case Converter" }
+        ]}
+      />
       <section className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">
           Case Converter
@@ -263,6 +271,74 @@ export default function CaseConverterPage() {
           <li>📋 One-click copy</li>
           <li>🔒 100% private</li>
         </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What case options are available?</p>
+            <p>
+              We offer UPPERCASE, lowercase, Title Case (capitalize each word),
+              Sentence case (capitalize first letter), camelCase, PascalCase,
+              snake_case, kebab-case, and CONSTANT_CASE.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What&apos;s the difference between Title Case and Sentence case?
+            </p>
+            <p>
+              Title Case capitalizes the first letter of every word (like book
+              titles). Sentence case only capitalizes the first letter of each
+              sentence (like normal writing).
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What are camelCase and PascalCase?</p>
+            <p>
+              These are programming naming conventions. camelCase starts
+              lowercase with each new word capitalized (firstName). PascalCase
+              is the same but starts uppercase (FirstName).
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my text sent to a server?</p>
+            <p>
+              No. All conversion happens instantly in your browser using
+              JavaScript. Your text never leaves your device.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Does it work with special characters?
+            </p>
+            <p>
+              Yes! Special characters, numbers, and punctuation are preserved.
+              Only letters are affected by case conversion. Works with accented
+              characters too.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I convert programming variable names?
+            </p>
+            <p>
+              Yes! Use snake_case for Python, camelCase for JavaScript,
+              PascalCase for classes, and CONSTANT_CASE for constants. Great for
+              refactoring code.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

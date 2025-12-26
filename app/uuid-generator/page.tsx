@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 export default function UuidGeneratorPage() {
   const [uuids, setUuids] = useState<string[]>([]);
@@ -73,6 +74,13 @@ export default function UuidGeneratorPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "UUID Generator" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           UUID Generator
@@ -268,6 +276,83 @@ export default function UuidGeneratorPage() {
           of v4 UUIDs also makes them suitable for security-sensitive
           applications.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What is a UUID?</p>
+            <p>
+              UUID (Universally Unique Identifier) is a 128-bit identifier
+              standard used to uniquely identify information. Also known as GUID
+              (Globally Unique Identifier), UUIDs are designed to be unique
+              across all devices and time without requiring a central authority.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What is UUID v4?</p>
+            <p>
+              UUID v4 is a randomly generated UUID. It uses random or
+              pseudo-random numbers to generate the identifier, with certain
+              bits set to indicate the version (4) and variant. UUID v4 has 122
+              random bits, providing approximately 5.3 x 10^36 unique
+              combinations.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Are these UUIDs truly random and secure?
+            </p>
+            <p>
+              Yes, our generator uses the Web Crypto API
+              (crypto.getRandomValues) which provides cryptographically strong
+              random values. This is the same API used for security-critical
+              applications in browsers.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What&apos;s the difference between UUID and GUID?
+            </p>
+            <p>
+              UUID and GUID are essentially the same thing. UUID is the term
+              used in most standards and Unix/Linux systems, while GUID
+              (Globally Unique Identifier) is the term Microsoft uses. Both
+              follow the same specification and format.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I generate UUIDs without hyphens?
+            </p>
+            <p>
+              Yes, our generator includes an option to remove hyphens from the
+              generated UUIDs. The standard format includes hyphens (e.g.,
+              550e8400-e29b-41d4-a716-446655440000), but some systems prefer the
+              compact format without them.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Are my generated UUIDs stored or tracked?
+            </p>
+            <p>
+              No, all UUID generation happens entirely in your browser using
+              JavaScript and the Web Crypto API. No data is sent to any server,
+              and we don&apos;t store or track the UUIDs you generate.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

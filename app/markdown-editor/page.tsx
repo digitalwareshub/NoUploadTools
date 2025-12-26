@@ -3,6 +3,7 @@
 import { marked } from "marked";
 import { useState, useMemo, useCallback } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 const TEMPLATES = {
   readme: `# Project Name
@@ -189,6 +190,13 @@ console.log(greeting);
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Markdown Editor" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           Markdown Editor
@@ -428,6 +436,77 @@ console.log(greeting);
             <p>&gt; blockquote</p>
             <p>`inline code`</p>
             <p>```code block```</p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What is Markdown?</p>
+            <p>
+              Markdown is a lightweight markup language created by John Gruber
+              in 2004. It uses simple syntax like # for headers, * for emphasis,
+              and - for lists to format plain text that can be converted to
+              HTML. It&apos;s widely used for documentation, README files, and
+              web content.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my Markdown text saved anywhere?</p>
+            <p>
+              No, this Markdown editor runs entirely in your browser. Your text
+              is never sent to any server. You can optionally save to your
+              browser&apos;s local storage for convenience, but nothing leaves
+              your device.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What Markdown syntax is supported?</p>
+            <p>
+              Our editor supports standard Markdown including headers (# H1 to
+              ###### H6), emphasis (*italic*, **bold**), links, images, code
+              blocks, blockquotes, ordered and unordered lists, horizontal
+              rules, and tables.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I export my Markdown as HTML?</p>
+            <p>
+              Yes, you can copy the rendered HTML directly or download your
+              content as a .md Markdown file. The live preview shows exactly how
+              your Markdown will render as HTML.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Why use Markdown instead of a word processor?
+            </p>
+            <p>
+              Markdown is platform-independent, version-control friendly, and
+              produces clean, semantic HTML. It&apos;s faster to write than
+              HTML, more portable than word processor formats, and widely
+              supported by platforms like GitHub, Reddit, Stack Overflow, and
+              many CMS systems.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Does this editor work offline?</p>
+            <p>
+              Yes, once the page loads, the editor works entirely offline. All
+              Markdown parsing and rendering happens in your browser using
+              JavaScript, so you can write without an internet connection.
+            </p>
           </div>
         </div>
       </section>

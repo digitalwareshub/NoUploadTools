@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 interface OptimizationOptions {
   removeComments: boolean;
@@ -293,6 +294,13 @@ export default function SvgOptimizerPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "SVG Optimizer" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">SVG Optimizer</h1>
         <p className="mt-2 text-gray-700">
@@ -511,6 +519,76 @@ export default function SvgOptimizerPage() {
           illustrations, the cumulative size reduction can significantly improve
           page load times.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What does SVG optimization do?</p>
+            <p>
+              SVG optimization removes unnecessary data from SVG files -
+              metadata, comments, editor artifacts, redundant attributes, and
+              whitespace. This reduces file size without affecting how the image
+              looks.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">How much smaller will my SVG be?</p>
+            <p>
+              Reduction varies based on the source. SVGs exported from design
+              tools like Illustrator or Figma often have 30-70% size reduction.
+              Hand-coded or already optimized SVGs may see smaller improvements.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Will optimization change how my SVG looks?
+            </p>
+            <p>
+              No, proper optimization only removes invisible data like metadata
+              and whitespace. The visual appearance remains identical. Always
+              preview the optimized SVG to verify.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my SVG uploaded to a server?</p>
+            <p>
+              No, all optimization happens entirely in your browser using
+              JavaScript. Your SVG files never leave your device, ensuring
+              complete privacy for proprietary graphics.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Should I optimize SVGs for the web?</p>
+            <p>
+              Yes, optimized SVGs load faster and improve website performance.
+              Smaller files mean less bandwidth usage and quicker rendering,
+              especially important for icons and illustrations used throughout a
+              site.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What metadata is removed during optimization?
+            </p>
+            <p>
+              The optimizer removes: XML declarations, DOCTYPE, editor metadata
+              (from Illustrator, Sketch, Figma), comments, hidden elements,
+              unused definitions, and redundant attributes that don&apos;t
+              affect display.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

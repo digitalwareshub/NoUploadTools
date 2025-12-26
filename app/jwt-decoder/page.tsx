@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 interface DecodedJwt {
   header: Record<string, unknown>;
@@ -128,6 +129,13 @@ export default function JwtDecoderPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "JWT Decoder" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">JWT Decoder</h1>
         <p className="mt-2 text-gray-700">
@@ -388,6 +396,75 @@ export default function JwtDecoderPage() {
           third-party tool. Treat JWTs like passwords — they often contain
           sensitive information.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What is a JWT token?</p>
+            <p>
+              JWT (JSON Web Token) is a compact, URL-safe way to represent
+              claims between two parties. It&apos;s commonly used for
+              authentication and information exchange in web applications.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Is it safe to decode JWT tokens online?
+            </p>
+            <p>
+              With our tool, yes! All decoding happens in your browser. Your
+              tokens never leave your device. However, you should never share
+              JWT tokens publicly as they may contain sensitive information.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What information is in a JWT?</p>
+            <p>
+              A JWT has three parts: Header (algorithm and token type), Payload
+              (claims like user ID, expiration, etc.), and Signature (for
+              verification). Our decoder shows the header and payload.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can this tool verify JWT signatures?
+            </p>
+            <p>
+              This tool decodes and displays JWT contents but doesn&apos;t
+              verify signatures. Signature verification requires the secret key,
+              which should never be shared with a third-party tool.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What does the &apos;exp&apos; claim mean?
+            </p>
+            <p>
+              The &apos;exp&apos; claim is the expiration time in Unix timestamp
+              format. Our decoder shows this as a human-readable date and
+              indicates if the token has expired.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Why is my token not decoding?</p>
+            <p>
+              Make sure you&apos;re pasting a complete JWT token. It should have
+              three parts separated by dots (xxxxx.yyyyy.zzzzz). The header and
+              payload must be valid Base64-encoded JSON.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

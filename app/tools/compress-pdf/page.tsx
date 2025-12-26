@@ -2,6 +2,7 @@
 
 import { useCallback, useState, useRef, type ChangeEvent } from "react";
 import { AdPlaceholder } from "../../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../../components/Breadcrumbs";
 
 type CompressionLevel = "low" | "medium" | "high";
 
@@ -171,6 +172,13 @@ export default function CompressPdfPage() {
 
   return (
     <div className="space-y-6 text-base text-gray-800">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Compress PDF" }
+        ]}
+      />
       <section className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">
           Compress PDF (No Upload)

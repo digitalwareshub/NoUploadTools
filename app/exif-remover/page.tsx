@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type OutputFormat = "image/jpeg" | "image/png" | "image/webp";
 
@@ -178,6 +179,13 @@ export default function ExifRemoverPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "EXIF Remover" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">EXIF Remover</h1>
         <p className="mt-2 text-gray-700">
@@ -403,6 +411,74 @@ export default function ExifRemoverPage() {
           By removing EXIF data before sharing, you protect your privacy while
           keeping the image quality intact.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What is EXIF data?</p>
+            <p>
+              EXIF (Exchangeable Image File Format) is metadata embedded in
+              photos that includes camera settings, date/time, GPS location,
+              device information, and more. This data can reveal personal
+              information you may not want to share.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Why should I remove EXIF data from photos?
+            </p>
+            <p>
+              EXIF data can reveal your location (GPS coordinates), when the
+              photo was taken, and what device you used. Removing it protects
+              your privacy when sharing photos online or with others.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Does removing EXIF affect image quality?
+            </p>
+            <p>
+              Our tool preserves the original image quality. We use the Canvas
+              API to redraw the image, which strips all metadata while
+              maintaining the visual quality of your photo.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Are my photos uploaded to a server?</p>
+            <p>
+              No, all processing happens entirely in your browser. Your photos
+              never leave your device, making this the most private way to
+              remove EXIF data.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What types of metadata are removed?</p>
+            <p>
+              All EXIF metadata is removed including: GPS coordinates, date/time
+              taken, camera make/model, lens information, exposure settings,
+              software used, and any embedded thumbnails.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Which image formats are supported?</p>
+            <p>
+              Our tool supports JPG/JPEG, PNG, and WebP images. The output
+              format can be selected, with JPG being the most common choice for
+              photos.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

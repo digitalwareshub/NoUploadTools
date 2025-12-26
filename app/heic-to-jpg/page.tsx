@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 export default function HeicToJpgPage() {
   const [sourceFile, setSourceFile] = useState<File | null>(null);
@@ -162,6 +163,13 @@ export default function HeicToJpgPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "HEIC to JPG" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           HEIC to JPG Converter
@@ -347,6 +355,73 @@ export default function HeicToJpgPage() {
           <strong>Tip:</strong> You can change your iPhone to save photos as JPG
           instead of HEIC in Settings → Camera → Formats → Most Compatible.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What is HEIC format?</p>
+            <p>
+              HEIC (High Efficiency Image Container) is Apple&apos;s default
+              photo format since iOS 11. It offers better compression than JPG
+              while maintaining quality, but has limited compatibility with
+              non-Apple devices and software.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">How do I convert HEIC to JPG?</p>
+            <p>
+              Simply upload your HEIC file to our converter, adjust quality if
+              needed, and click Convert. Your JPG will be ready to download
+              instantly. No account or server upload required.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is this HEIC converter free?</p>
+            <p>
+              Yes, our HEIC to JPG converter is completely free with no limits.
+              There are no watermarks, registration, or hidden fees.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Are my photos uploaded to a server?</p>
+            <p>
+              No, all processing happens entirely in your browser. Your photos
+              never leave your device, ensuring complete privacy for personal
+              images.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Why won&apos;t Windows open my iPhone photos?
+            </p>
+            <p>
+              iPhones save photos in HEIC format by default, which Windows
+              doesn&apos;t natively support. Converting to JPG makes your photos
+              compatible with all devices and software.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Does conversion affect photo quality?
+            </p>
+            <p>
+              You can control the output quality. At 90-95% quality, the
+              difference is virtually imperceptible. Lower quality settings
+              reduce file size but may show compression artifacts.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

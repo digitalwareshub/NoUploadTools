@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useMemo } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 interface RGB {
   r: number;
@@ -193,6 +194,13 @@ export default function ColorPickerPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Color Picker" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           Color Picker & Converter
@@ -423,6 +431,79 @@ export default function ColorPickerPage() {
           is essential for print design where colors are created by mixing cyan,
           magenta, yellow, and black inks.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What color formats are supported?</p>
+            <p>
+              Our color picker supports HEX (e.g., #FF5733), RGB (e.g., rgb(255,
+              87, 51)), HSL (e.g., hsl(11, 100%, 60%)), and CMYK (e.g., cmyk(0%,
+              66%, 80%, 0%)) formats with real-time conversion between all
+              formats.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What is the WCAG contrast checker?</p>
+            <p>
+              WCAG (Web Content Accessibility Guidelines) defines minimum
+              contrast ratios for text readability. Our contrast checker
+              calculates the ratio between text and background colors, helping
+              you ensure your designs are accessible. A ratio of 4.5:1 is
+              required for normal text, and 3:1 for large text.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              How does the palette generator work?
+            </p>
+            <p>
+              The palette generator creates harmonious color schemes based on
+              color theory. It can generate complementary (opposite), analogous
+              (adjacent), triadic (three evenly spaced), and split-complementary
+              palettes from any base color you select.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What&apos;s the difference between RGB and CMYK?
+            </p>
+            <p>
+              RGB (Red, Green, Blue) is used for digital displays and adds light
+              to create colors. CMYK (Cyan, Magenta, Yellow, Key/Black) is used
+              for print and subtracts light. Colors may look different between
+              RGB screens and CMYK prints due to this fundamental difference.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I save my favorite colors?</p>
+            <p>
+              Yes, the color picker maintains a history of colors you&apos;ve
+              used during your session. You can click on any previous color to
+              return to it. Colors are stored temporarily in your browser and
+              are not uploaded anywhere.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is this tool free to use?</p>
+            <p>
+              Yes, our color picker is completely free with no limits or
+              registration required. All color calculations happen in your
+              browser, ensuring your design work remains private.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 interface FaviconSize {
   size: number;
@@ -190,6 +191,13 @@ export default function FaviconGeneratorPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Favicon Generator" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           Favicon Generator
@@ -417,6 +425,73 @@ export default function FaviconGeneratorPage() {
           resolution. Complex logos may not be legible at 16×16 pixels. Consider
           creating a simplified version specifically for favicon use.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What sizes do I need for favicons?</p>
+            <p>
+              Common sizes include 16x16 and 32x32 for browsers, 180x180 for
+              Apple devices, and 192x192/512x512 for Android. This tool
+              generates all recommended sizes automatically.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What image format should I use as the source?
+            </p>
+            <p>
+              Use a high-resolution square image (at least 512x512 pixels) in
+              PNG format with a transparent background if needed. JPG and WebP
+              images also work but don&apos;t support transparency.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Do I need an ICO file?</p>
+            <p>
+              ICO files are still useful for legacy browser support and Windows
+              shortcuts. However, most modern browsers support PNG favicons
+              directly. This tool generates both formats.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What is an Apple Touch Icon?</p>
+            <p>
+              Apple Touch Icons appear when users save your website to their
+              home screen on iOS devices. The recommended size is 180x180
+              pixels. Without one, Safari will use a screenshot of your page.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              How do I add favicons to my website?
+            </p>
+            <p>
+              Add link tags in your HTML head section for each favicon size.
+              This tool provides ready-to-use HTML code that you can copy and
+              paste into your website.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my image uploaded to a server?</p>
+            <p>
+              No, all favicon generation happens in your browser using the
+              Canvas API. Your images never leave your device, ensuring complete
+              privacy.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

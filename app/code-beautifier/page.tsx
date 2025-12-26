@@ -3,6 +3,7 @@
 import beautify from "js-beautify";
 import { useState, useMemo } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type Language = "javascript" | "html" | "css" | "json";
 type IndentStyle = "space" | "tab";
@@ -103,6 +104,13 @@ export default function CodeBeautifierPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Code Beautifier" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           Code Beautifier
@@ -350,6 +358,78 @@ export default function CodeBeautifierPage() {
           follows common style conventions while being customizable to match
           your preferences.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">
+              What languages does this beautifier support?
+            </p>
+            <p>
+              This beautifier supports JavaScript (including ES6+), HTML/XML,
+              CSS/SCSS, and JSON. It uses js-beautify, a widely-used and
+              reliable formatting library.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Why should I beautify my code?</p>
+            <p>
+              Beautified code is easier to read, debug, and maintain. Consistent
+              formatting helps teams collaborate effectively and makes code
+              reviews more efficient. It also helps identify syntax errors that
+              might be hidden in minified code.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I customize the formatting style?
+            </p>
+            <p>
+              Yes, you can customize indentation (spaces or tabs), indent size,
+              line width, brace style, and various language-specific options.
+              These settings let you match your team&apos;s coding standards.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Is my code secure when using this tool?
+            </p>
+            <p>
+              Yes, all code formatting happens entirely in your browser. Your
+              code is never sent to any server, making it safe to use with
+              proprietary or sensitive code.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I minify code with this tool?</p>
+            <p>
+              This tool is designed for beautification (making code readable).
+              For minification (making code smaller), you would need a dedicated
+              minifier tool that removes whitespace and shortens variable names.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Does beautifying change how my code works?
+            </p>
+            <p>
+              No, beautification only changes whitespace and formatting. It
+              doesn&apos;t alter the logic or functionality of your code. The
+              beautified code will execute exactly the same as the original.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

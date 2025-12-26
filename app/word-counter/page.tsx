@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type Stats = {
   characters: number;
@@ -75,6 +76,13 @@ export default function WordCounterPage() {
 
   return (
     <div className="space-y-6 text-base text-gray-800">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Word Counter" }
+        ]}
+      />
       <section className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">Word Counter</h1>
         <p className="text-sm text-gray-700">
@@ -182,6 +190,75 @@ export default function WordCounterPage() {
             <strong>Paragraphs:</strong> Counted by double line breaks
           </li>
         </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">How are words counted?</p>
+            <p>
+              Words are counted by splitting text on whitespace. Hyphenated
+              words count as one word. Numbers count as words. Empty strings
+              between multiple spaces are not counted.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">How is reading time calculated?</p>
+            <p>
+              We use an average reading speed of 200-250 words per minute.
+              Actual reading time varies based on content complexity and the
+              reader.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What&apos;s the difference between character counts?
+            </p>
+            <p>
+              &apos;Characters&apos; counts every character including spaces.
+              &apos;Characters (no spaces)&apos; excludes spaces. Some platforms
+              (like Twitter) count characters differently.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my text sent to a server?</p>
+            <p>
+              No. All counting happens instantly in your browser using
+              JavaScript. Your text never leaves your device. Safe for
+              confidential documents.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Does it work with different languages?
+            </p>
+            <p>
+              Yes! Character counting works for any language. Word counting
+              works best for space-separated languages. CJK languages without
+              spaces may need different counting methods.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Why do word counts differ from Microsoft Word?
+            </p>
+            <p>
+              Different tools count words slightly differently. Variations come
+              from how hyphenated words, numbers, and special characters are
+              handled. Differences are usually minor.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

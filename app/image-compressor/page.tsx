@@ -2,6 +2,7 @@
 
 import { useState, useRef, type ChangeEvent } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type OutputFormat = "jpeg" | "png" | "webp";
 
@@ -192,6 +193,13 @@ export default function ImageCompressorPage() {
 
   return (
     <div className="space-y-6 text-base text-gray-800">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Image Compressor" }
+        ]}
+      />
       <section className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">
           Image Compressor (No Upload)
@@ -396,6 +404,74 @@ export default function ImageCompressorPage() {
           <li>⚡ Fast, local processing</li>
           <li>🔒 100% private</li>
         </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">
+              How much can I reduce image file size?
+            </p>
+            <p>
+              Typically 50-80% reduction for photos. Results depend on the
+              original image quality and your chosen settings. You can preview
+              the result and adjust quality to find the perfect balance.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Does compression reduce image quality?
+            </p>
+            <p>
+              Some quality loss occurs with lossy compression (JPG, WebP). You
+              control the quality level - higher settings preserve more detail.
+              PNG uses lossless compression, so quality is preserved.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What image formats are supported?</p>
+            <p>
+              We support JPEG/JPG, PNG, and WebP formats. You can also convert
+              between formats during compression for optimal file size.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I compress multiple images at once?
+            </p>
+            <p>
+              Yes! You can upload multiple images and compress them all with the
+              same settings. Download individually or all as a ZIP file.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Are my images uploaded to a server?</p>
+            <p>
+              No. All compression happens locally in your browser using the
+              Canvas API. Your images never leave your device.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What&apos;s the best format for web images?
+            </p>
+            <p>
+              WebP offers the best compression for web use. JPEG is best for
+              photos with broad browser support. PNG is best for graphics with
+              transparency or text.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 export default function PngToJpgPage() {
   const [sourceImage, setSourceImage] = useState<{
@@ -164,6 +165,13 @@ export default function PngToJpgPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "PNG to JPG" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           PNG to JPG Converter
@@ -356,6 +364,73 @@ export default function PngToJpgPage() {
           images with important transparency, consider keeping the PNG format or
           using WebP instead.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">How do I convert PNG to JPG?</p>
+            <p>
+              Simply upload your PNG file to our converter, adjust the quality
+              if needed, and click Convert. Your JPG file will be ready to
+              download instantly. No account or upload to servers required.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is this PNG to JPG converter free?</p>
+            <p>
+              Yes, our PNG to JPG converter is completely free to use with no
+              limits. There are no hidden fees, watermarks, or registration
+              required.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Are my images uploaded to a server?</p>
+            <p>
+              No, all processing happens entirely in your browser using the
+              Canvas API. Your images never leave your device, ensuring complete
+              privacy for sensitive images.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Why convert PNG to JPG?</p>
+            <p>
+              JPG files are typically smaller than PNG files because they use
+              lossy compression. This makes them ideal for photographs, web
+              images, and sharing via email. Converting to JPG can reduce file
+              sizes by 50-80%.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What happens to transparency when converting PNG to JPG?
+            </p>
+            <p>
+              JPG does not support transparency. When you convert a PNG with
+              transparent areas to JPG, the transparent parts will be replaced
+              with a white background.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What quality setting should I use?</p>
+            <p>
+              For most uses, 85-90% quality provides an excellent balance
+              between file size and image quality. For photographs where quality
+              is critical, use 95%. For web images where file size matters more,
+              try 70-80%.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 interface MatchResult {
   fullMatch: string;
@@ -141,6 +142,13 @@ export default function RegexTesterPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Regex Tester" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">Regex Tester</h1>
         <p className="mt-2 text-gray-700">
@@ -419,6 +427,79 @@ export default function RegexTesterPage() {
           standard regex features including lookahead (?=), lookbehind (?&lt;=),
           and named groups (?&lt;name&gt;) in modern browsers.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">
+              What regex flavor does this tester use?
+            </p>
+            <p>
+              This tester uses JavaScript&apos;s native RegExp engine. It
+              supports standard regex syntax including character classes,
+              quantifiers, anchors, groups, lookahead, and lookbehind (in modern
+              browsers).
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What do the regex flags mean?</p>
+            <p>
+              g (global) finds all matches, not just the first. i
+              (case-insensitive) ignores letter case. m (multiline) makes ^ and
+              $ match line boundaries. s (dotall) makes . match newlines. u
+              (unicode) enables full Unicode support.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">How do I match special characters?</p>
+            <p>
+              Special characters like . * + ? ^ $ {"{}"} [] \ | ( ) need to be
+              escaped with a backslash. For example, to match a literal dot, use
+              \. instead of just a dot.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What are capture groups?</p>
+            <p>
+              Capture groups are created with parentheses () and allow you to
+              extract specific parts of a match. For example, (\d{"{4}"})-(\d
+              {"{2}"})-(\d{"{2}"}) captures year, month, and day separately from
+              a date.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Why isn&apos;t my regex matching anything?
+            </p>
+            <p>
+              Common issues include: forgetting to escape special characters,
+              missing the global flag for multiple matches, case sensitivity
+              (try the i flag), or incorrect anchors (^ and $ in multiline
+              text).
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Is my data secure when using this tool?
+            </p>
+            <p>
+              Yes, all regex testing happens entirely in your browser using
+              JavaScript. Your patterns and test text are never sent to any
+              server, ensuring complete privacy.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

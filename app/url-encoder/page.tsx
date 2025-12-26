@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type EncodingMode = "component" | "full";
 
@@ -128,6 +129,13 @@ export default function UrlEncoderPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "URL Encoder" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           URL Encoder/Decoder
@@ -343,6 +351,87 @@ export default function UrlEncoderPage() {
           ? # & =. Use it for complete URLs where you want to keep the
           structure.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What is URL encoding?</p>
+            <p>
+              URL encoding (also called percent encoding) converts special
+              characters into a format that can be safely transmitted in URLs.
+              Characters like spaces, &amp;, ?, and = have special meanings in
+              URLs, so they must be encoded as %20, %26, %3F, and %3D
+              respectively.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What&apos;s the difference between encodeURI and
+              encodeURIComponent?
+            </p>
+            <p>
+              encodeURI is used for encoding complete URLs and preserves
+              characters that are valid in URLs (like :, /, ?, #, &amp;).
+              encodeURIComponent is more aggressive and encodes all special
+              characters, making it suitable for encoding query parameter values
+              that might contain URL-special characters.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">When do I need to URL encode?</p>
+            <p>
+              You need URL encoding when: passing user input in URLs, including
+              special characters in query parameters, building URLs
+              programmatically, sending data via GET requests, or when a URL
+              contains non-ASCII characters like accented letters or emojis.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What characters need to be URL encoded?
+            </p>
+            <p>
+              Reserved characters that have special meaning in URLs need
+              encoding: ! # $ &amp; &apos; ( ) * + , / : ; = ? @ [ ]. Unsafe
+              characters like spaces, &lt; &gt; {"{}"} | \ ^ ` also need
+              encoding. Any non-ASCII characters (like e, n, Chinese characters)
+              must be encoded.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Why does my URL show %20 instead of spaces?
+            </p>
+            <p>
+              %20 is the URL-encoded representation of a space character. URLs
+              cannot contain literal spaces, so they are converted to %20 (or
+              sometimes + in query strings). When decoded, %20 converts back to
+              a space.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Is my data secure when using this tool?
+            </p>
+            <p>
+              Yes, all encoding and decoding happens entirely in your browser
+              using JavaScript&apos;s built-in functions. Your URLs and data are
+              never sent to any server, ensuring complete privacy for sensitive
+              information.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

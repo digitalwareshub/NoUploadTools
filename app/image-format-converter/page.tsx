@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef, useMemo } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type ImageFormat = "image/png" | "image/jpeg" | "image/webp";
 
@@ -193,6 +194,13 @@ export default function ImageFormatConverterPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Image Format Converter" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           Image Format Converter
@@ -458,6 +466,78 @@ export default function ImageFormatConverterPage() {
           JPG at equivalent visual quality. This improves page load times and
           reduces bandwidth usage.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">
+              What image formats can I convert between?
+            </p>
+            <p>
+              This tool supports conversion between PNG, JPG/JPEG, WebP, and GIF
+              formats. You can convert from any of these formats to any other
+              supported format.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my image uploaded to a server?</p>
+            <p>
+              No, all image processing happens entirely in your browser using
+              the Canvas API. Your images never leave your device, ensuring
+              complete privacy for sensitive images.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What is the difference between PNG and JPG?
+            </p>
+            <p>
+              PNG supports transparency and uses lossless compression, making it
+              ideal for graphics, logos, and screenshots. JPG uses lossy
+              compression for smaller file sizes, best for photographs. WebP
+              offers better compression than both.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What quality setting should I use?</p>
+            <p>
+              For JPG and WebP, 80-90% quality usually provides a good balance
+              between file size and visual quality. PNG is lossless so quality
+              doesn&apos;t apply. Lower quality means smaller files but more
+              compression artifacts.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I convert multiple images at once?
+            </p>
+            <p>
+              Currently, this tool processes one image at a time for optimal
+              performance and simplicity. For batch processing, you can convert
+              images sequentially.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Why should I convert to WebP?</p>
+            <p>
+              WebP typically produces 25-35% smaller files than JPG at
+              equivalent quality, and supports transparency like PNG. It&apos;s
+              supported by all modern browsers and is recommended for web use to
+              improve page load times.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

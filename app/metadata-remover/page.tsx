@@ -2,6 +2,7 @@
 
 import { useState, useRef, type ChangeEvent } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type ProcessedFile = {
   id: string;
@@ -190,6 +191,13 @@ export default function MetadataRemoverPage() {
 
   return (
     <div className="space-y-6 text-base text-gray-800">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Metadata Remover" }
+        ]}
+      />
       <section className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">
           Metadata Remover (No Upload)
@@ -366,6 +374,76 @@ export default function MetadataRemoverPage() {
           <li>⚡ Fast, local processing</li>
           <li>🔒 100% private</li>
         </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">
+              What metadata is removed from images?
+            </p>
+            <p>
+              We remove all EXIF data including GPS coordinates, camera
+              information, date/time taken, device identifiers, thumbnail
+              images, and editing software info. The resulting image contains
+              only pixel data.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What metadata is removed from PDFs?</p>
+            <p>
+              We remove author name, creation/modification dates, software info,
+              title, subject, keywords, and other document properties. The
+              content of your PDF remains unchanged.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Why should I remove metadata before sharing?
+            </p>
+            <p>
+              Photos can reveal your exact location through GPS data. Documents
+              can expose your name and organization. Metadata can be used to
+              track you or reveal information you didn&apos;t intend to share.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Does removing metadata affect image quality?
+            </p>
+            <p>
+              For most formats, no. We strip metadata without re-encoding the
+              image. For some formats, a minimal re-encoding may occur but at
+              maximum quality settings to preserve image fidelity.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my data kept private?</p>
+            <p>
+              Absolutely. All processing happens in your browser using
+              JavaScript. Your files never leave your device. There are no
+              uploads, no cloud storage, and no data collection.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What file formats are supported?</p>
+            <p>
+              We support JPEG/JPG images (full EXIF removal), PNG images
+              (metadata chunks removal), and PDF documents (document properties
+              removal).
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

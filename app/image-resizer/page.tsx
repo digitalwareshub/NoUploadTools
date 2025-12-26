@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type OutputFormat = "image/jpeg" | "image/png" | "image/webp";
 
@@ -233,6 +234,13 @@ export default function ImageResizerPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Image Resizer" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">Image Resizer</h1>
         <p className="mt-2 text-gray-700">
@@ -519,6 +527,69 @@ export default function ImageResizerPage() {
           <strong>Aspect ratio</strong> keeps your images proportional. Unlock
           it only if you specifically want to stretch or squash the image.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">How do I resize an image online?</p>
+            <p>
+              Upload your image, enter the desired width and/or height, and
+              click Resize. Your resized image will be ready to download
+              instantly. All processing happens in your browser.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is this image resizer free?</p>
+            <p>
+              Yes, our image resizer is completely free with no limits on the
+              number of images you can resize. No registration or watermarks.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Are my images uploaded to a server?</p>
+            <p>
+              No, all processing happens entirely in your browser using the
+              Canvas API. Your images never leave your device, ensuring complete
+              privacy.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What image formats are supported?</p>
+            <p>
+              Our resizer supports all common image formats including JPG/JPEG,
+              PNG, WebP, and GIF. You can also choose the output format.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I maintain the aspect ratio when resizing?
+            </p>
+            <p>
+              Yes, there&apos;s an option to lock the aspect ratio. When
+              enabled, changing the width will automatically adjust the height
+              proportionally, and vice versa.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Will resizing affect image quality?</p>
+            <p>
+              Enlarging images can reduce quality as the browser interpolates
+              new pixels. Reducing size generally maintains quality. You can
+              adjust the output quality for JPG and WebP formats.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 export default function SvgToPngPage() {
   const [svgContent, setSvgContent] = useState<string | null>(null);
@@ -200,6 +201,13 @@ export default function SvgToPngPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "SVG to PNG" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           SVG to PNG Converter
@@ -402,6 +410,67 @@ export default function SvgToPngPage() {
           <strong>Tip:</strong> Use higher scales (2x, 3x, 4x) for high-DPI
           displays or when you need larger images for print.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">How do I convert SVG to PNG?</p>
+            <p>
+              Upload your SVG file, choose your desired output size or scale,
+              and click Convert. Your PNG will be ready to download instantly.
+              All processing happens in your browser.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is this SVG to PNG converter free?</p>
+            <p>
+              Yes, our SVG to PNG converter is completely free with no limits.
+              No registration, watermarks, or hidden fees.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Why convert SVG to PNG?</p>
+            <p>
+              While SVG is great for scalable graphics, many applications and
+              platforms only accept raster images like PNG. Converting allows
+              you to use your vector graphics anywhere.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Does the conversion preserve transparency?
+            </p>
+            <p>
+              Yes, PNG supports transparency. If your SVG has transparent areas,
+              they will be preserved in the PNG output.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I choose the output size?</p>
+            <p>
+              Yes, you can set custom dimensions or use scale multipliers (2x,
+              3x, 4x) to create high-resolution PNGs from your SVG.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Are my files uploaded to a server?</p>
+            <p>
+              No, all processing happens entirely in your browser using the
+              Canvas API. Your files never leave your device.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

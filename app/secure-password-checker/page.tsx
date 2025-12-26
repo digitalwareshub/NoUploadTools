@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 const COMMON_PASSWORDS = [
   "password",
@@ -323,6 +324,13 @@ export default function SecurePasswordCheckerPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Password Checker" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           Secure Password Checker
@@ -539,6 +547,83 @@ export default function SecurePasswordCheckerPage() {
           patterns. A truly random 16-character password is virtually impossible
           to crack, while common 8-character passwords can be broken in minutes.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">
+              Is it safe to enter my password in this checker?
+            </p>
+            <p>
+              Yes, this password checker runs entirely in your browser. Your
+              password is never sent to any server or stored anywhere. All
+              analysis happens locally on your device using JavaScript.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What makes a password strong?</p>
+            <p>
+              A strong password is at least 12-16 characters long, contains a
+              mix of uppercase, lowercase, numbers, and symbols, doesn&apos;t
+              use dictionary words or common patterns, and is unique to each
+              account. Avoid personal information like birthdays or names.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              How does the password strength calculation work?
+            </p>
+            <p>
+              The checker analyzes multiple factors: length, character variety
+              (uppercase, lowercase, numbers, symbols), common patterns (like
+              &apos;123&apos;, &apos;abc&apos;), dictionary words, and known
+              weak passwords. Each factor contributes to the overall score.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What are common password patterns to avoid?
+            </p>
+            <p>
+              Avoid sequential characters (123, abc), keyboard patterns (qwerty,
+              asdf), repeated characters (aaa, 111), common substitutions
+              (p@ssw0rd), dictionary words, personal information, and previously
+              breached passwords.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              How long would it take to crack my password?
+            </p>
+            <p>
+              Crack time depends on password complexity and attack method. A
+              simple 8-character password can be cracked in hours. A
+              16-character random password with mixed characters could take
+              billions of years. This tool estimates crack time based on
+              brute-force attack assumptions.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Should I use a password manager?</p>
+            <p>
+              Yes, password managers are highly recommended. They generate and
+              store unique, complex passwords for each account, so you only need
+              to remember one master password. This is much more secure than
+              reusing passwords or using simple memorable passwords.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

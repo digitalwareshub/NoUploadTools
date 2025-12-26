@@ -3,6 +3,7 @@
 import * as Diff from "diff";
 import { useState, useMemo } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type DiffMode = "line" | "word" | "character";
 type ViewMode = "split" | "unified";
@@ -170,6 +171,13 @@ export default function TextDiffPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Text Diff" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">Text Diff</h1>
         <p className="mt-2 text-gray-700">
@@ -331,6 +339,82 @@ export default function TextDiffPage() {
           view shows both versions side by side, while unified view combines
           them with inline highlighting.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What is a text diff tool?</p>
+            <p>
+              A text diff tool compares two blocks of text and highlights the
+              differences between them. It shows additions, deletions, and
+              changes, making it easy to see what has been modified between two
+              versions of text.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Is my text data uploaded to any server?
+            </p>
+            <p>
+              No, our text diff tool processes everything in your browser using
+              JavaScript. Your text never leaves your device, ensuring complete
+              privacy for sensitive documents.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What&apos;s the difference between line-by-line and
+              character-level diff?
+            </p>
+            <p>
+              Line-by-line diff compares entire lines and marks whole lines as
+              added, removed, or changed. Character-level diff goes deeper,
+              highlighting the specific characters that differ within each line
+              for more precise comparison.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              When should I use a text comparison tool?
+            </p>
+            <p>
+              Text diff tools are useful for comparing code versions, reviewing
+              document changes, checking contract revisions, verifying
+              configuration file changes, comparing API responses, and finding
+              differences in any text content.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What do the colors in the diff output mean?
+            </p>
+            <p>
+              Green highlighting indicates text that was added (present in the
+              second text but not the first). Red highlighting shows text that
+              was removed (present in the first text but not the second). Yellow
+              or gray may indicate unchanged context lines.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I compare large text files?</p>
+            <p>
+              Yes, since processing happens in your browser, you can compare
+              large text files limited only by your device&apos;s memory. There
+              are no server-imposed file size limits.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

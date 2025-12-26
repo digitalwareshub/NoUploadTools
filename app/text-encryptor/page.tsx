@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type Mode = "encrypt" | "decrypt";
 
@@ -180,6 +181,13 @@ export default function TextEncryptorPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Text Encryptor" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           Text Encryptor
@@ -388,6 +396,84 @@ export default function TextEncryptorPage() {
           (IV), so encrypting the same text twice produces completely different
           outputs. This prevents pattern analysis and ensures maximum security.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">
+              How do I share an encrypted message?
+            </p>
+            <p>
+              After encrypting your message, copy the encrypted text (Base64
+              format) and share it through any channel - email, messaging apps,
+              etc. Share the password separately through a different channel for
+              security. The recipient can use this same tool to decrypt it.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is text encryption secure?</p>
+            <p>
+              Yes, this tool uses AES-256-GCM encryption, the same standard used
+              by governments and banks. Combined with PBKDF2 key derivation
+              (100,000 iterations), your messages are protected by
+              military-grade encryption that would take billions of years to
+              crack.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can encrypted messages be decrypted without the password?
+            </p>
+            <p>
+              No, without the correct password, the encrypted message cannot be
+              recovered. AES-256 encryption is considered unbreakable with
+              current technology. Always share passwords through secure channels
+              and never include them with the encrypted message.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my message stored anywhere?</p>
+            <p>
+              No, all encryption and decryption happens in your browser using
+              JavaScript. Your messages and passwords are never sent to any
+              server, stored, or logged. When you close or refresh the page,
+              everything is gone.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Why does the encrypted output look random?
+            </p>
+            <p>
+              The encrypted output is encoded in Base64 format, which uses
+              letters, numbers, and symbols. It contains the encrypted data plus
+              metadata (salt and IV) needed for decryption. Each encryption
+              produces different output even for the same message.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I encrypt long messages or entire documents?
+            </p>
+            <p>
+              Yes, you can encrypt text of any length. However, for large
+              documents or files, consider using our File Encryptor tool
+              instead, which is optimized for handling larger data more
+              efficiently.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

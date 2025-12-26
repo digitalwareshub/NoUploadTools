@@ -3,6 +3,7 @@
 import { parse as parseCsv } from "papaparse";
 import { useState, useMemo, useCallback } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type OutputFormat = "json" | "json-array" | "xml" | "html" | "tsv" | "markdown";
 
@@ -215,6 +216,13 @@ export default function CsvConverterPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "CSV Converter" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">CSV Converter</h1>
         <p className="mt-2 text-gray-700">
@@ -441,6 +449,73 @@ export default function CsvConverterPage() {
           optional header rows. The parser follows RFC 4180 standards for
           reliable conversion.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What formats can I convert CSV to?</p>
+            <p>
+              You can convert CSV to JSON (array of objects or 2D array), XML,
+              HTML tables, TSV (tab-separated), and Markdown tables. You can
+              also convert JSON back to CSV.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Does this tool support different CSV delimiters?
+            </p>
+            <p>
+              Yes, the tool supports comma (,), semicolon (;), tab, and pipe (|)
+              delimiters. It can also auto-detect the delimiter used in your CSV
+              file.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my CSV data secure?</p>
+            <p>
+              Absolutely. All CSV parsing and conversion happens entirely in
+              your browser. Your data is never uploaded to any server, ensuring
+              complete privacy for sensitive information like spreadsheet data.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I convert large CSV files?</p>
+            <p>
+              Yes, since processing happens in your browser, you can convert CSV
+              files of any reasonable size. Very large files (100MB+) may be
+              slower depending on your device&apos;s capabilities.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              How does the tool handle quoted fields?
+            </p>
+            <p>
+              The parser correctly handles quoted fields, including fields
+              containing commas, newlines, or escaped quotes. It follows RFC
+              4180 CSV standards for proper parsing.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I convert JSON back to CSV?</p>
+            <p>
+              Yes, you can paste JSON data (array of objects) and convert it to
+              CSV format. The tool automatically extracts headers from the
+              object keys and creates a properly formatted CSV.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

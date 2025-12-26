@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type PasswordStrength = "weak" | "fair" | "good" | "strong" | "very-strong";
 
@@ -196,6 +197,13 @@ export default function PasswordGeneratorPage() {
 
   return (
     <div className="space-y-6 text-base text-gray-800">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Password Generator" }
+        ]}
+      />
       <section className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">
           Password Generator

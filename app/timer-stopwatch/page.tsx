@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type Mode = "timer" | "stopwatch";
 
@@ -195,6 +196,13 @@ export default function TimerStopwatchPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Timer & Stopwatch" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           Timer & Stopwatch
@@ -515,6 +523,73 @@ export default function TimerStopwatchPage() {
           <li>The timer continues running even if you switch browser tabs</li>
           <li>Keep the tab open for the alarm to sound when the timer ends</li>
         </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">Does the timer work offline?</p>
+            <p>
+              Yes, once the page is loaded, the timer and stopwatch work
+              entirely in your browser without needing an internet connection.
+              They use your device&apos;s clock for accurate timing.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Will the timer keep running if I switch tabs?
+            </p>
+            <p>
+              Yes, the timer continues running in the background when you switch
+              tabs or minimize the browser. The alarm will still sound when the
+              timer completes.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I use multiple timers at once?</p>
+            <p>
+              The current implementation supports one timer at a time. However,
+              you can open multiple browser tabs if you need to run multiple
+              timers simultaneously.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">How accurate is the timer?</p>
+            <p>
+              The timer uses your browser&apos;s high-resolution timing APIs and
+              is accurate to within milliseconds. It&apos;s suitable for most
+              timing needs including workouts, cooking, and productivity
+              sessions.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What is the Pomodoro technique?</p>
+            <p>
+              The Pomodoro technique is a time management method using 25-minute
+              focused work sessions followed by 5-minute breaks. After four
+              sessions, take a longer 15-30 minute break. The preset timers
+              include Pomodoro intervals.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is there a maximum timer duration?</p>
+            <p>
+              You can set timers up to 99 hours, 59 minutes, and 59 seconds.
+              This is sufficient for most practical timing needs from quick
+              kitchen timers to long study sessions.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

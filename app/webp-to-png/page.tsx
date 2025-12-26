@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 export default function WebpToPngPage() {
   const [sourceImage, setSourceImage] = useState<{
@@ -159,6 +160,13 @@ export default function WebpToPngPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "WebP to PNG" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           WebP to PNG Converter
@@ -321,6 +329,71 @@ export default function WebpToPngPage() {
           software that doesn&apos;t support WebP, or when sharing with users
           who may have compatibility issues.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">How do I convert WebP to PNG?</p>
+            <p>
+              Simply upload your WebP file to our converter and click Convert.
+              Your PNG file will be ready to download instantly. No account or
+              server upload required.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is this WebP to PNG converter free?</p>
+            <p>
+              Yes, our WebP to PNG converter is completely free to use with no
+              limits. There are no hidden fees, watermarks, or registration
+              required.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Does WebP to PNG conversion preserve transparency?
+            </p>
+            <p>
+              Yes, our converter preserves the alpha channel (transparency) from
+              WebP images when converting to PNG. PNG supports full
+              transparency.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Why convert WebP to PNG?</p>
+            <p>
+              While WebP offers better compression, PNG has wider compatibility
+              with older software and image editors. Converting to PNG ensures
+              your images work everywhere.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Are my images uploaded to a server?</p>
+            <p>
+              No, all processing happens entirely in your browser using the
+              Canvas API. Your images never leave your device, ensuring complete
+              privacy.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What is WebP format?</p>
+            <p>
+              WebP is a modern image format developed by Google that provides
+              superior compression for web images. It supports both lossy and
+              lossless compression, as well as transparency.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

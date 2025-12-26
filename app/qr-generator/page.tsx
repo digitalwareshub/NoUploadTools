@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 export default function QrGeneratorPage() {
   const [text, setText] = useState<string>("https://nouploadtools.com");
@@ -101,6 +102,13 @@ export default function QrGeneratorPage() {
 
   return (
     <div className="space-y-6 text-base text-gray-800">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "QR Generator" }
+        ]}
+      />
       <section className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">
           QR Code Generator (No Upload)
@@ -282,6 +290,69 @@ export default function QrGeneratorPage() {
           <li>♾️ QR codes never expire</li>
           <li>🔒 100% private</li>
         </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What can I encode in a QR code?</p>
+            <p>
+              You can encode URLs, plain text, WiFi credentials, phone numbers,
+              email addresses, SMS messages, and more. QR codes can hold up to
+              about 3KB of data.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What format should I download?</p>
+            <p>
+              PNG is best for digital use and most applications. SVG is vector
+              format - perfect for printing at any size without quality loss or
+              for editing in design software.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my data sent to a server?</p>
+            <p>
+              No. QR code generation happens entirely in your browser using
+              JavaScript. Your data never leaves your device. This is especially
+              important for sensitive data like WiFi passwords.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">How big can my QR code be?</p>
+            <p>
+              You can generate QR codes up to 1000x1000 pixels. For larger
+              sizes, download the SVG format and scale it infinitely without
+              quality loss.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Do QR codes expire?</p>
+            <p>
+              No, QR codes generated here never expire. They contain the data
+              directly, not a link to our service. The codes work forever and
+              don&apos;t depend on any server.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I customize the QR code colors?</p>
+            <p>
+              Yes, you can customize the foreground and background colors. Keep
+              in mind that high contrast (like black on white) ensures the best
+              scanning reliability.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

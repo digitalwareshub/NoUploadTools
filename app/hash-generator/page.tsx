@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type HashAlgorithm = "MD5" | "SHA-1" | "SHA-256" | "SHA-512";
 
@@ -133,6 +134,13 @@ export default function HashGeneratorPage() {
 
   return (
     <div className="space-y-6 text-base text-gray-800">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Hash Generator" }
+        ]}
+      />
       <section className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">
           Hash Generator
@@ -273,6 +281,72 @@ export default function HashGeneratorPage() {
           <li>⚡ Fast local processing</li>
           <li>🔒 100% private</li>
         </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What is a hash?</p>
+            <p>
+              A hash is a fixed-size string generated from input data. The same
+              input always produces the same hash, but even tiny changes create
+              completely different hashes. It&apos;s used to verify data
+              integrity.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Which hash algorithm should I use?</p>
+            <p>
+              SHA-256 is recommended for most purposes. MD5 and SHA-1 are faster
+              but have known vulnerabilities. SHA-512 offers more security but
+              produces longer hashes.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I verify downloaded files?</p>
+            <p>
+              Yes! Drop or select a file to generate its hash, then compare it
+              to the hash provided by the download source. If they match, the
+              file wasn&apos;t corrupted or tampered with.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is hashing the same as encryption?</p>
+            <p>
+              No. Hashing is one-way - you can&apos;t reverse a hash to get the
+              original data. Encryption is two-way - encrypted data can be
+              decrypted with the right key.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Are my files uploaded?</p>
+            <p>
+              No. All hashing happens locally using the Web Crypto API. Your
+              files never leave your device. This is crucial for verifying
+              sensitive files privately.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Why do different tools give different MD5 hashes?
+            </p>
+            <p>
+              The hash depends on the exact bytes. Different line endings
+              (Windows vs Unix), character encodings, or trailing whitespace can
+              cause different hashes for seemingly identical text.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

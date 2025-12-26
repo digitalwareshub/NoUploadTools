@@ -3,6 +3,7 @@
 import { PDFDocument, StandardFonts } from "pdf-lib";
 import { useCallback, useState, type ChangeEvent } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type SelectedFile = {
   id: string;
@@ -206,6 +207,13 @@ export default function ImageToPdfPage() {
 
   return (
     <div className="space-y-6 text-base text-gray-800">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Image to PDF" }
+        ]}
+      />
       <section className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">
           Image to PDF (No Upload)

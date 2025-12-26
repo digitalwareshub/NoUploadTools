@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 export default function JsonFormatterPage() {
   const [input, setInput] = useState<string>("");
@@ -103,6 +104,13 @@ export default function JsonFormatterPage() {
 
   return (
     <div className="space-y-6 text-base text-gray-800">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "JSON Formatter" }
+        ]}
+      />
       <section className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">
           JSON Formatter & Validator
@@ -258,6 +266,70 @@ export default function JsonFormatterPage() {
             <strong>Comments:</strong> JSON doesn&apos;t support comments
           </li>
         </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What is JSON formatting?</p>
+            <p>
+              JSON formatting adds proper indentation and line breaks to make
+              JSON data human-readable. Minified JSON removes all whitespace for
+              smaller file size.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">How do I validate JSON?</p>
+            <p>
+              Paste your JSON and click Format. If there&apos;s an error,
+              we&apos;ll show you exactly where it is. Common issues include
+              missing commas, unquoted keys, or trailing commas.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What&apos;s the difference between format and minify?
+            </p>
+            <p>
+              Format adds whitespace for readability. Minify removes all
+              unnecessary whitespace for the smallest possible size - useful for
+              APIs and production.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my JSON data sent to a server?</p>
+            <p>
+              No. All processing uses built-in browser JavaScript
+              (JSON.parse/stringify). Your data stays in your browser. Safe for
+              sensitive API responses or configs.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I format large JSON files?</p>
+            <p>
+              Yes, but very large files may be slow. Browser memory limits
+              apply. For files over 10MB, consider using a desktop tool instead.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Why does my JSON have errors?</p>
+            <p>
+              Common issues: trailing commas (not allowed in JSON), single
+              quotes (must use double), unquoted keys, or missing commas between
+              items. Our error messages show the exact location.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

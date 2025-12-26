@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type Category =
   | "length"
@@ -336,6 +337,13 @@ export default function UnitConverterPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Unit Converter" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           Unit Converter
@@ -542,6 +550,78 @@ export default function UnitConverterPage() {
           bytes (traditionally used by operating systems), not decimal prefixes
           where 1 KB = 1000 bytes (used by storage manufacturers).
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What types of units can I convert?</p>
+            <p>
+              This tool converts length (meters, feet, miles, etc.), weight/mass
+              (kilograms, pounds, ounces), temperature (Celsius, Fahrenheit,
+              Kelvin), volume (liters, gallons, cups), and area (square meters,
+              acres, hectares).
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">How accurate are the conversions?</p>
+            <p>
+              All conversions use precise mathematical conversion factors.
+              Results are displayed with appropriate decimal precision for
+              practical accuracy in everyday use.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              How do I convert Celsius to Fahrenheit?
+            </p>
+            <p>
+              Select Temperature as the category, enter a value in Celsius, and
+              the Fahrenheit equivalent will be calculated instantly. The
+              formula is F = C x 9/5 + 32.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What&apos;s the difference between metric and imperial?
+            </p>
+            <p>
+              Metric (SI) uses meters, kilograms, and liters with decimal
+              prefixes. Imperial uses feet, pounds, and gallons. Most countries
+              use metric, while the US primarily uses imperial.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Can I convert between any two units?
+            </p>
+            <p>
+              You can convert between any units within the same category (e.g.,
+              meters to feet, both length units). You cannot convert between
+              different categories (e.g., length to weight) as they measure
+              different physical properties.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Is this converter available offline?
+            </p>
+            <p>
+              Yes, once loaded, all calculations happen in your browser without
+              needing an internet connection. No data is sent to any server.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

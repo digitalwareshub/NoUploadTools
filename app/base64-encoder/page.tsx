@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type Mode = "encode" | "decode";
 
@@ -106,6 +107,13 @@ export default function Base64EncoderPage() {
 
   return (
     <div className="space-y-6 text-base text-gray-800">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "Base64 Encoder" }
+        ]}
+      />
       <section className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">
           Base64 Encoder/Decoder
@@ -247,6 +255,69 @@ export default function Base64EncoderPage() {
           <li>📋 One-click copy</li>
           <li>🔒 100% private</li>
         </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What is Base64 encoding?</p>
+            <p>
+              Base64 is a way to represent binary data using only printable
+              ASCII characters. It&apos;s commonly used to embed images in
+              HTML/CSS, transmit data in URLs, and encode email attachments.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Why does Base64 increase file size?</p>
+            <p>
+              Base64 uses 4 characters to represent every 3 bytes of data,
+              resulting in about 33% size increase. This is the trade-off for
+              being able to represent binary data as text.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is Base64 encryption?</p>
+            <p>
+              No, Base64 is encoding, not encryption. Anyone can decode Base64
+              data. It&apos;s meant for data transport compatibility, not
+              security. Don&apos;t use it to hide sensitive information.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Can I encode files to Base64?</p>
+            <p>
+              Yes! You can drag and drop or select any file to convert it to a
+              Base64 data URL. This is useful for embedding small images
+              directly in HTML or CSS.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Is my data sent to a server?</p>
+            <p>
+              No. All encoding and decoding happens locally in your browser
+              using built-in JavaScript functions. Your data never leaves your
+              device.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">What&apos;s a Base64 data URL?</p>
+            <p>
+              A data URL includes the Base64 data along with the MIME type, like
+              &apos;data:image/png;base64,...&apos;. This can be used directly
+              as an image src in HTML.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );

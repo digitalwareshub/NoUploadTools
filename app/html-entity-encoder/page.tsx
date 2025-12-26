@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
+import { Breadcrumbs } from "../../components/Breadcrumbs";
 
 type EncodingMode = "minimal" | "all" | "non-ascii";
 
@@ -167,6 +168,13 @@ export default function HtmlEntityEncoderPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "HTML Entity Encoder" }
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">
           HTML Entity Encoder
@@ -373,6 +381,82 @@ export default function HtmlEntityEncoderPage() {
           prevents Cross-Site Scripting (XSS) attacks by ensuring that special
           characters are displayed as text rather than interpreted as HTML code.
         </p>
+      </section>
+
+      {/* FAQ */}
+      <section className="space-y-2 text-sm text-gray-700">
+        <h2 className="text-base font-semibold tracking-tight">
+          Frequently Asked Questions
+        </h2>
+
+        <div className="space-y-3">
+          <div>
+            <p className="font-semibold">What are HTML entities?</p>
+            <p>
+              HTML entities are special codes used to represent characters that
+              have special meaning in HTML (like &lt; &gt; &amp;) or characters
+              not easily typed on a keyboard. For example, &amp;lt; represents
+              &lt;, &amp;gt; represents &gt;, and &amp;amp; represents &amp;.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Why do I need to encode HTML entities?
+            </p>
+            <p>
+              Encoding prevents special characters from being interpreted as
+              HTML code. This is essential for security (preventing XSS attacks)
+              and for displaying characters like &lt; and &gt; as text rather
+              than HTML tags.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What&apos;s the difference between named and numeric entities?
+            </p>
+            <p>
+              Named entities use descriptive names like &amp;copy; for ©, while
+              numeric entities use character codes like &amp;#169; or
+              &amp;#xA9;. Named entities are more readable but numeric entities
+              cover more characters.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">When should I use HTML entities?</p>
+            <p>
+              Use HTML entities when: displaying user input in HTML to prevent
+              XSS, showing code examples on web pages, including special
+              characters in HTML attributes, or displaying characters that
+              aren&apos;t on your keyboard.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              What characters must always be encoded in HTML?
+            </p>
+            <p>
+              Five characters must always be encoded in HTML content: &lt;
+              (&amp;lt;), &gt; (&amp;gt;), &amp; (&amp;amp;), &quot;
+              (&amp;quot;), and &apos; (&amp;#39; or &amp;apos;). These have
+              special meaning in HTML syntax.
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">
+              Is my data secure when using this encoder?
+            </p>
+            <p>
+              Yes, all encoding and decoding happens entirely in your browser
+              using JavaScript. Your text is never sent to any server, ensuring
+              complete privacy for any content you process.
+            </p>
+          </div>
+        </div>
       </section>
     </div>
   );
