@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Convert images between PNG, JPG, WebP, and GIF formats. Adjust quality and resize images. 100% browser-based - no uploads required.",
   keywords: [
-    "image converter",
-    "convert png to jpg",
-    "convert jpg to png",
-    "convert to webp",
-    "image format converter",
-    "convert image online",
-    "png to webp",
-    "jpg to webp"
+    "image converter online free",
+    "convert png to jpg without losing quality",
+    "convert jpg to png with transparency",
+    "convert image to webp for website",
+    "how to change image format",
+    "image format converter no upload",
+    "png to webp converter free",
+    "best image converter no watermark",
+    "convert photo format online free",
+    "batch image format converter",
+    "convert image without signup",
+    "change picture format online"
   ],
   alternates: {
     canonical: `${siteUrl}/image-format-converter`

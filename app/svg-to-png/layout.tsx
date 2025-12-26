@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Convert SVG vector graphics to PNG images instantly in your browser. Choose custom dimensions and scale. No file uploads, 100% private.",
   keywords: [
-    "svg to png",
-    "convert svg to png",
-    "svg to png converter",
-    "svg converter online",
-    "svg to image",
-    "vector to png",
+    "svg to png converter free",
+    "convert svg to png online",
+    "svg to png with transparent background",
+    "how to convert svg to png",
+    "svg to png high resolution",
+    "vector to raster converter",
     "svg to png no upload",
-    "free svg converter"
+    "svg to png 2x 3x scale",
+    "convert logo svg to png",
+    "svg to png for social media",
+    "best svg to png converter",
+    "svg to png custom size"
   ],
   alternates: {
     canonical: `${siteUrl}/svg-to-png`

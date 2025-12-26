@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Convert CSV files to JSON, XML, HTML tables, and more. Parse, preview, and transform CSV data. 100% browser-based - no uploads required.",
   keywords: [
-    "csv converter",
-    "csv to json",
-    "csv to xml",
-    "csv parser",
-    "convert csv online",
-    "csv to html table",
-    "csv viewer",
-    "json to csv"
+    "csv converter online free",
+    "csv to json converter",
+    "csv to xml converter",
+    "csv parser tool",
+    "convert csv to json online",
+    "csv to html table generator",
+    "csv viewer online",
+    "json to csv converter free",
+    "excel to json converter",
+    "csv to markdown table",
+    "open csv file online",
+    "csv data converter"
   ],
   alternates: {
     canonical: `${siteUrl}/csv-converter`

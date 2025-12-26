@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Test and debug regular expressions with real-time matching, highlighting, and explanations. Supports JavaScript regex with flags. No uploads required.",
   keywords: [
-    "regex tester",
+    "regex tester online free",
     "regular expression tester",
-    "regex online",
-    "regex debugger",
-    "regex validator",
-    "test regex",
-    "regex pattern tester",
-    "javascript regex"
+    "test regex pattern",
+    "regex debugger tool",
+    "regex validator online",
+    "regex match tester",
+    "javascript regex tester",
+    "regex101 alternative",
+    "test regular expression online",
+    "regex pattern checker",
+    "regex capture group tester",
+    "regex for email phone validation"
   ],
   alternates: {
     canonical: `${siteUrl}/regex-tester`

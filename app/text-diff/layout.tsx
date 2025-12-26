@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Compare two blocks of text and highlight differences instantly. Free online text diff tool with line-by-line and character-level comparison. No uploads required.",
   keywords: [
-    "text diff",
-    "compare text online",
+    "text diff tool online",
+    "compare two texts free",
     "text comparison tool",
-    "diff checker",
-    "find differences in text",
-    "side by side text comparison",
-    "highlight text differences",
-    "online diff tool"
+    "diff checker online",
+    "find differences between files",
+    "side by side text compare",
+    "highlight text changes",
+    "online diff checker free",
+    "compare documents online",
+    "code diff tool",
+    "text difference finder",
+    "compare text versions"
   ],
   alternates: {
     canonical: `${siteUrl}/text-diff`

@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Encrypt and decrypt text messages with AES-256 encryption. Share encrypted messages securely. 100% browser-based - no server uploads.",
   keywords: [
-    "text encryptor",
-    "encrypt text online",
-    "text encryption",
-    "decrypt text",
-    "AES text encryption",
+    "text encryptor online free",
+    "encrypt message with password",
+    "aes text encryption tool",
+    "decrypt text message online",
     "secure message encryption",
-    "encrypt message online",
-    "password protect text"
+    "encrypt text for email",
+    "how to encrypt text message",
+    "password protect text online",
+    "encrypted message sender",
+    "text encryption no upload",
+    "send encrypted message free",
+    "encode secret message online"
   ],
   alternates: {
     canonical: `${siteUrl}/text-encryptor`

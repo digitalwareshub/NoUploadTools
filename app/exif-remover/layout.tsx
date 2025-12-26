@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Remove EXIF metadata from photos including GPS location, camera info, and timestamps. 100% browser-based, your images never leave your device.",
   keywords: [
-    "exif remover",
-    "remove exif data",
-    "strip exif",
-    "remove photo metadata",
-    "remove gps from photo",
-    "photo privacy",
-    "exif remover online",
-    "remove image metadata"
+    "remove exif data from photo free",
+    "exif remover online no upload",
+    "remove gps location from photo",
+    "strip metadata from image",
+    "photo privacy tool",
+    "remove camera info from image",
+    "how to remove location from photo",
+    "delete photo metadata online",
+    "remove exif before sharing",
+    "exif data remover for privacy",
+    "clean photo metadata free",
+    "remove personal info from picture"
   ],
   alternates: {
     canonical: `${siteUrl}/exif-remover`

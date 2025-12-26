@@ -9,13 +9,18 @@ export const metadata: Metadata = {
   description:
     "Convert WebP images to PNG format instantly in your browser. No file uploads, 100% private. Preserve transparency and download lossless PNG files.",
   keywords: [
-    "webp to png",
-    "convert webp to png",
-    "webp to png converter",
-    "webp to png online",
-    "webp converter",
-    "free webp to png",
-    "webp to png no upload"
+    "webp to png converter free",
+    "convert webp to png online",
+    "webp to png with transparency",
+    "how to convert webp to png",
+    "webp to png no upload required",
+    "open webp file as png",
+    "webp to png converter no watermark",
+    "change webp to png free",
+    "webp image converter online",
+    "convert webp to png for photoshop",
+    "webp to png batch converter",
+    "best webp to png converter"
   ],
   alternates: {
     canonical: `${siteUrl}/webp-to-png`

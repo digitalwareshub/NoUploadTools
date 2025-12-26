@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Encode and decode URLs and query parameters instantly. Free online URL encoder with parameter parsing and special character handling. No uploads required.",
   keywords: [
-    "url encoder",
-    "url decoder",
-    "encode url online",
-    "decode url online",
-    "url encoding",
-    "percent encoding",
-    "query string encoder",
-    "encodeURIComponent"
+    "url encoder online free",
+    "url decoder tool",
+    "encode special characters in url",
+    "decode percent encoding",
+    "url escape characters online",
+    "encode url for api",
+    "query string encoder tool",
+    "url encoding converter",
+    "how to encode url parameters",
+    "decode %20 in url",
+    "uri encoder online",
+    "url safe string converter"
   ],
   alternates: {
     canonical: `${siteUrl}/url-encoder`

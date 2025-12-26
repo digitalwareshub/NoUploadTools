@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Generate favicons in multiple sizes from any image. Create ICO, PNG favicons and Apple Touch icons. 100% browser-based - no uploads required.",
   keywords: [
-    "favicon generator",
-    "create favicon",
-    "favicon maker",
-    "ico generator",
-    "favicon from image",
-    "apple touch icon",
-    "favicon converter",
-    "website icon maker"
+    "favicon generator free online",
+    "create favicon from image",
+    "favicon maker for website",
+    "ico file generator",
+    "how to create favicon",
+    "apple touch icon generator",
+    "favicon all sizes generator",
+    "png to ico converter",
+    "website favicon creator",
+    "favicon generator no upload",
+    "multi size favicon generator",
+    "favicon for wordpress shopify"
   ],
   alternates: {
     canonical: `${siteUrl}/favicon-generator`

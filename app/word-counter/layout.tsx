@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Count words, characters, sentences, and paragraphs in your text. Check reading time. All processing happens locally in your browser.",
   keywords: [
-    "word counter",
-    "character counter",
-    "word count",
-    "character count",
-    "sentence counter",
-    "reading time",
-    "text statistics",
-    "count words online"
+    "word counter online free",
+    "character counter tool",
+    "count words in text",
+    "word count checker",
+    "sentence counter online",
+    "reading time calculator",
+    "how many words in my text",
+    "text length counter",
+    "word counter for essay",
+    "character count with spaces",
+    "paragraph counter online",
+    "free word count tool"
   ],
   alternates: {
     canonical: `${siteUrl}/word-counter`

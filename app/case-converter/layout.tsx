@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Convert text between UPPERCASE, lowercase, Title Case, Sentence case, and more. All processing happens locally in your browser.",
   keywords: [
-    "case converter",
-    "uppercase converter",
-    "lowercase converter",
-    "title case",
-    "sentence case",
-    "text case changer",
-    "convert text case",
-    "capitalize text"
+    "case converter online free",
+    "convert to uppercase online",
+    "lowercase text converter",
+    "title case converter tool",
+    "sentence case converter",
+    "change text case online",
+    "camelCase converter",
+    "capitalize all letters",
+    "text case changer tool",
+    "convert caps to lowercase",
+    "snake_case converter",
+    "toggle text case online"
   ],
   alternates: {
     canonical: `${siteUrl}/case-converter`

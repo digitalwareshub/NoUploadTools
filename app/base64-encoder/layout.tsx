@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Encode text to Base64 or decode Base64 back to text. Convert files to Base64 data URLs. All processing happens locally in your browser.",
   keywords: [
-    "base64 encoder",
-    "base64 decoder",
-    "encode base64",
-    "decode base64",
-    "base64 converter",
-    "text to base64",
-    "base64 to text",
-    "base64 online"
+    "base64 encoder decoder online",
+    "encode text to base64",
+    "decode base64 to text",
+    "base64 converter free",
+    "image to base64 converter",
+    "base64 string encoder",
+    "convert file to base64",
+    "base64 data url generator",
+    "how to encode base64",
+    "base64 decoder for images",
+    "base64 encode online free",
+    "base64 for html css"
   ],
   alternates: {
     canonical: `${siteUrl}/base64-encoder`

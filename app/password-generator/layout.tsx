@@ -9,15 +9,18 @@ export const metadata: Metadata = {
   description:
     "Generate strong, random passwords instantly. Customize length, characters, and complexity. All generation happens locally in your browser - completely private.",
   keywords: [
-    "password generator",
-    "random password",
-    "strong password generator",
-    "secure password",
-    "password creator",
-    "generate password online",
-    "random password generator",
-    "password maker",
-    "complex password generator"
+    "password generator online free",
+    "random password generator secure",
+    "strong password generator tool",
+    "generate secure password",
+    "password creator with symbols",
+    "how to generate strong password",
+    "random password no signup",
+    "password generator for accounts",
+    "16 character password generator",
+    "uncrackable password generator",
+    "password generator with special characters",
+    "memorable strong password generator"
   ],
   alternates: {
     canonical: `${siteUrl}/password-generator`

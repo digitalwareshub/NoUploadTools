@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Optimize and compress SVG files to reduce size. Remove unnecessary metadata, clean up code, and minify SVGs. 100% browser-based - no uploads required.",
   keywords: [
-    "svg optimizer",
-    "svg compressor",
-    "optimize svg",
-    "compress svg",
-    "svg minifier",
-    "clean svg",
-    "reduce svg size",
-    "svg cleaner"
+    "svg optimizer online free",
+    "compress svg file size",
+    "optimize svg for web",
+    "svg minifier no upload",
+    "reduce svg file size",
+    "clean svg from illustrator",
+    "remove svg metadata",
+    "svgo alternative online",
+    "svg optimization tool",
+    "minify svg for website",
+    "svg cleaner for figma export",
+    "optimize svg without losing quality"
   ],
   alternates: {
     canonical: `${siteUrl}/svg-optimizer`

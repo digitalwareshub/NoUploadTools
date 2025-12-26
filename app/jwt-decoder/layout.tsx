@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Decode and inspect JWT tokens instantly in your browser. View header, payload, and verify structure. 100% client-side, your tokens stay private.",
   keywords: [
-    "jwt decoder",
-    "decode jwt",
-    "jwt parser",
-    "json web token decoder",
-    "jwt debugger",
-    "jwt viewer",
-    "jwt decoder online",
-    "decode jwt token"
+    "jwt decoder online free",
+    "decode jwt token payload",
+    "jwt parser tool",
+    "json web token debugger",
+    "jwt viewer online",
+    "check jwt expiration",
+    "decode bearer token",
+    "jwt decoder no upload",
+    "read jwt claims online",
+    "jwt io alternative",
+    "decode access token",
+    "jwt token inspector"
   ],
   alternates: {
     canonical: `${siteUrl}/jwt-decoder`

@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Generate QR codes for URLs, text, WiFi, and more. Download as PNG or SVG. All generation happens locally in your browser - no data sent to servers.",
   keywords: [
-    "qr code generator",
-    "create qr code",
-    "qr code maker",
-    "free qr code",
-    "qr code for url",
-    "wifi qr code",
-    "qr code download",
-    "generate qr code online"
+    "qr code generator free",
+    "create qr code online",
+    "qr code maker no signup",
+    "free qr code no watermark",
+    "qr code for website link",
+    "wifi qr code generator",
+    "qr code download png svg",
+    "custom qr code generator",
+    "qr code for business card",
+    "qr code generator no tracking",
+    "how to make qr code free",
+    "qr code for restaurant menu"
   ],
   alternates: {
     canonical: `${siteUrl}/qr-generator`

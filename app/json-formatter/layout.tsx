@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Format, validate, and beautify JSON data. Minify JSON for production. All processing happens locally in your browser - no data sent to servers.",
   keywords: [
-    "json formatter",
-    "json validator",
-    "pretty print json",
-    "json beautifier",
-    "minify json",
-    "json parser",
-    "format json online",
-    "json viewer"
+    "json formatter online free",
+    "json validator and formatter",
+    "pretty print json online",
+    "json beautifier tool",
+    "minify json online",
+    "format json with indentation",
+    "json syntax checker",
+    "how to format json",
+    "json viewer online",
+    "validate json api response",
+    "json lint alternative",
+    "fix json format errors"
   ],
   alternates: {
     canonical: `${siteUrl}/json-formatter`

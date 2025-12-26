@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Generate Lorem Ipsum placeholder text for design mockups. Create paragraphs, sentences, or words instantly. Free online tool with no uploads.",
   keywords: [
-    "lorem ipsum generator",
-    "placeholder text",
-    "dummy text generator",
-    "lorem ipsum online",
-    "free lorem ipsum",
-    "design placeholder text",
+    "lorem ipsum generator free",
+    "placeholder text generator",
+    "dummy text for design",
+    "lorem ipsum copy paste",
+    "generate filler text",
+    "lorem ipsum paragraphs",
     "mockup text generator",
-    "filler text generator"
+    "random text generator",
+    "lorem ipsum for website",
+    "blank text generator",
+    "sample text generator",
+    "lorem ipsum html"
   ],
   alternates: {
     canonical: `${siteUrl}/lorem-ipsum`

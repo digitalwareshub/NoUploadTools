@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Check your password strength with detailed security analysis. Tests against common passwords, patterns, and provides improvement suggestions. 100% offline.",
   keywords: [
-    "password checker",
-    "password strength",
-    "password security",
-    "password tester",
+    "password strength checker free",
     "how secure is my password",
-    "password analyzer",
-    "password strength meter",
-    "secure password test"
+    "password security test online",
+    "check password strength offline",
+    "password analyzer tool",
+    "test password security",
+    "how strong is my password",
+    "password crack time calculator",
+    "is my password safe",
+    "password vulnerability checker",
+    "password strength meter online",
+    "check if password is weak"
   ],
   alternates: {
     canonical: `${siteUrl}/secure-password-checker`

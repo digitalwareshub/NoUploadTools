@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Resize images to any dimension instantly in your browser. No file uploads, 100% private. Supports JPG, PNG, WebP with quality control.",
   keywords: [
-    "image resizer",
-    "resize image online",
-    "image resize tool",
-    "resize photo",
-    "reduce image size",
-    "resize image free",
+    "resize image online free",
     "image resizer no upload",
-    "resize jpg png webp"
+    "how to resize image without losing quality",
+    "resize photo for passport",
+    "reduce image dimensions online",
+    "resize image to specific pixels",
+    "image resizer for Instagram",
+    "resize picture for Facebook",
+    "bulk image resizer free",
+    "resize image for email attachment",
+    "change image size online free",
+    "photo resizer no watermark"
   ],
   alternates: {
     canonical: `${siteUrl}/image-resizer`

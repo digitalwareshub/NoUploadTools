@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Encode and decode HTML entities instantly. Convert special characters to HTML entities and vice versa. 100% browser-based - no uploads required.",
   keywords: [
-    "html entity encoder",
-    "html entity decoder",
-    "encode html entities",
-    "decode html entities",
-    "html special characters",
-    "html escape",
-    "html unescape",
-    "character entity reference"
+    "html entity encoder online",
+    "html entity decoder free",
+    "encode special characters html",
+    "decode html entities to text",
+    "html escape tool",
+    "convert symbols to html entities",
+    "html character codes",
+    "encode less than greater than html",
+    "html special characters converter",
+    "prevent xss encode html",
+    "html entities list reference",
+    "ampersand encoding html"
   ],
   alternates: {
     canonical: `${siteUrl}/html-entity-encoder`

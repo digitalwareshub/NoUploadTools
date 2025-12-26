@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Convert iPhone HEIC photos to JPG format instantly in your browser. No file uploads, 100% private. Works with iOS photos offline.",
   keywords: [
-    "heic to jpg",
-    "heic to jpeg",
-    "convert heic to jpg",
-    "heic converter",
-    "iphone photo converter",
-    "heic to jpg online",
-    "free heic converter",
-    "heic to jpg no upload"
+    "heic to jpg converter free",
+    "convert heic to jpg online",
+    "how to open heic file on windows",
+    "iphone photo to jpg converter",
+    "heic to jpeg no upload",
+    "convert apple photos to jpg",
+    "heic file converter free",
+    "open heic on pc",
+    "heic to jpg without software",
+    "batch heic to jpg converter",
+    "ios photo format converter",
+    "heic not opening fix"
   ],
   alternates: {
     canonical: `${siteUrl}/heic-to-jpg`

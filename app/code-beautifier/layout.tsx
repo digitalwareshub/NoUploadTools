@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Beautify and format JavaScript, HTML, CSS, and JSON code. Customize indentation and style options. 100% browser-based - no uploads required.",
   keywords: [
-    "code beautifier",
-    "javascript formatter",
-    "html beautifier",
-    "css formatter",
-    "json formatter",
-    "code formatter online",
-    "prettify code",
-    "format code online"
+    "code beautifier online free",
+    "javascript formatter tool",
+    "html beautifier online",
+    "css formatter free",
+    "format code online",
+    "prettify javascript code",
+    "code indenter online",
+    "prettier alternative online",
+    "format minified code",
+    "js beautify online",
+    "html code formatter",
+    "unminify code online"
   ],
   alternates: {
     canonical: `${siteUrl}/code-beautifier`

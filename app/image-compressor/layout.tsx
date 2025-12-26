@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Compress images to reduce file size while maintaining quality. Supports JPG, PNG, WebP. All processing happens locally - no uploads required.",
   keywords: [
-    "compress image",
-    "reduce image size",
-    "image compressor",
-    "compress jpg",
-    "compress png",
-    "resize image",
-    "optimize image",
-    "image size reducer"
+    "compress image online free",
+    "reduce image size without losing quality",
+    "image compressor no upload",
+    "compress jpg for email",
+    "compress png without losing quality",
+    "how to reduce image file size",
+    "compress image for website",
+    "reduce photo size online free",
+    "image compression tool no signup",
+    "compress picture for Instagram",
+    "bulk image compressor",
+    "compress image to specific size kb"
   ],
   alternates: {
     canonical: `${siteUrl}/image-compressor`

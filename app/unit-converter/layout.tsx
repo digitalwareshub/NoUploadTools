@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Convert between units of length, weight, temperature, volume, and more. Instant calculations with no ads or tracking. 100% browser-based.",
   keywords: [
-    "unit converter",
-    "convert units",
-    "length converter",
-    "weight converter",
-    "temperature converter",
-    "metric converter",
-    "measurement converter",
-    "unit conversion calculator"
+    "unit converter online free",
+    "convert units calculator",
+    "length converter feet to meters",
+    "weight converter kg to lbs",
+    "celsius to fahrenheit converter",
+    "metric to imperial converter",
+    "measurement converter tool",
+    "cm to inches converter",
+    "miles to km converter",
+    "volume converter liters gallons",
+    "area converter square feet",
+    "cooking measurement converter"
   ],
   alternates: {
     canonical: `${siteUrl}/unit-converter`

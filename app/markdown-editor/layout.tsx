@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Write and preview Markdown in real-time. Free online Markdown editor with live preview, syntax highlighting, and export options. No uploads required.",
   keywords: [
-    "markdown editor",
-    "markdown preview",
-    "online markdown editor",
-    "free markdown editor",
-    "live markdown preview",
-    "markdown to html",
-    "markdown converter",
-    "write markdown online"
+    "markdown editor online free",
+    "markdown preview live",
+    "online markdown writer",
+    "free markdown editor tool",
+    "markdown to html converter",
+    "github markdown editor",
+    "markdown editor with preview",
+    "write markdown online",
+    "markdown table generator",
+    "readme md editor online",
+    "markdown syntax editor",
+    "wysiwyg markdown editor"
   ],
   alternates: {
     canonical: `${siteUrl}/markdown-editor`

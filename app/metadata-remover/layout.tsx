@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Remove hidden metadata from images and PDFs before sharing. Strip EXIF data, GPS coordinates, author info. All processing happens locally - no uploads.",
   keywords: [
-    "remove metadata",
-    "strip exif data",
-    "remove exif from photo",
-    "metadata remover",
-    "remove gps from photo",
-    "privacy metadata",
-    "clean metadata",
-    "remove author from pdf"
+    "remove metadata from photo free",
+    "strip exif data online",
+    "remove location from photo",
+    "metadata remover tool",
+    "remove gps data from image",
+    "photo privacy cleaner",
+    "clean metadata before sharing",
+    "remove author from pdf free",
+    "delete photo metadata online",
+    "exif data stripper",
+    "remove hidden data from image",
+    "metadata cleaner no upload"
   ],
   alternates: {
     canonical: `${siteUrl}/metadata-remover`

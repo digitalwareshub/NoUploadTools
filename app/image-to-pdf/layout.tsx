@@ -9,13 +9,18 @@ export const metadata: Metadata = {
   description:
     "Convert JPG and PNG images into a single PDF file. All processing happens in your browser. No uploads, completely private and secure. Works offline after loading.",
   keywords: [
-    "image to pdf",
-    "jpg to pdf",
-    "png to pdf",
-    "convert image pdf",
-    "no upload converter",
-    "offline pdf converter",
-    "privacy pdf tool"
+    "image to pdf converter free",
+    "jpg to pdf online free",
+    "png to pdf converter no upload",
+    "how to convert image to pdf",
+    "combine images into pdf",
+    "multiple images to single pdf",
+    "photo to pdf converter free online",
+    "convert pictures to pdf no watermark",
+    "image to pdf no signup required",
+    "best image to pdf converter",
+    "convert screenshot to pdf",
+    "merge photos into one pdf"
   ],
   alternates: {
     canonical: `${siteUrl}/image-to-pdf`

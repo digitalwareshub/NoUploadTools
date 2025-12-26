@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Encrypt and decrypt files securely with AES-256-GCM encryption. Free browser-based file encryption tool. No uploads - your files never leave your device.",
   keywords: [
-    "file encryptor",
-    "encrypt files online",
-    "AES encryption",
-    "file decryptor",
-    "secure file encryption",
-    "browser encryption",
-    "offline encryption",
-    "password protect files"
+    "file encryptor online free",
+    "encrypt file with password",
+    "aes 256 file encryption",
+    "decrypt file online",
+    "secure file encryption tool",
+    "encrypt files no upload",
+    "password protect file online",
+    "how to encrypt a file",
+    "file encryption for email",
+    "protect file with password free",
+    "local file encryptor",
+    "encrypt pdf word excel file"
   ],
   alternates: {
     canonical: `${siteUrl}/file-encryptor`

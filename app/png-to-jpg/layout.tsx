@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Convert PNG images to JPG format instantly in your browser. No file uploads, 100% private. Adjust quality settings and download compressed JPG files.",
   keywords: [
-    "png to jpg",
-    "png to jpeg",
-    "convert png to jpg",
-    "png to jpg converter",
-    "png to jpg online",
-    "image converter",
-    "free png to jpg",
-    "png to jpg no upload"
+    "png to jpg converter free",
+    "convert png to jpg online",
+    "png to jpeg without losing quality",
+    "how to convert png to jpg",
+    "png to jpg no upload required",
+    "change png to jpg free",
+    "png to jpg converter no watermark",
+    "convert png to jpg for email",
+    "reduce png file size by converting to jpg",
+    "png to jpg batch converter",
+    "best png to jpg converter online",
+    "transparent png to jpg with white background"
   ],
   alternates: {
     canonical: `${siteUrl}/png-to-jpg`

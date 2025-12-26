@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Generate MD5, SHA-1, SHA-256, SHA-512 hashes for text and files. Verify file integrity. All processing happens locally in your browser.",
   keywords: [
-    "hash generator",
-    "md5 hash",
-    "sha256 hash",
-    "sha512 hash",
-    "file checksum",
-    "hash calculator",
-    "file hash",
-    "verify checksum"
+    "hash generator online free",
+    "md5 hash generator",
+    "sha256 hash calculator",
+    "sha512 hash online",
+    "file checksum calculator",
+    "generate hash from text",
+    "verify file checksum online",
+    "md5 checksum generator",
+    "sha256 file hash",
+    "how to check file hash",
+    "hash calculator no upload",
+    "compare file checksums"
   ],
   alternates: {
     canonical: `${siteUrl}/hash-generator`

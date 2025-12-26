@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Generate UUID v4 (random) unique identifiers instantly. Free online UUID generator with bulk generation and format options. No uploads required.",
   keywords: [
-    "uuid generator",
-    "guid generator",
-    "unique id generator",
-    "uuid v4",
-    "random uuid",
-    "bulk uuid generator",
-    "online uuid generator",
-    "free uuid tool"
+    "uuid generator online free",
+    "guid generator tool",
+    "unique id generator online",
+    "uuid v4 generator",
+    "random uuid generator",
+    "bulk uuid generator free",
+    "generate multiple uuids",
+    "uuid without dashes",
+    "how to generate uuid",
+    "uuid for database",
+    "uuid generator for developers",
+    "uuid maker online"
   ],
   alternates: {
     canonical: `${siteUrl}/uuid-generator`

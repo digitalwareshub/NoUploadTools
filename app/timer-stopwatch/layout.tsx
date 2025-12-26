@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Free online timer and stopwatch with lap times, alarms, and presets. Perfect for workouts, studying, and productivity. Works offline in your browser.",
   keywords: [
-    "online timer",
-    "countdown timer",
-    "stopwatch online",
-    "free timer",
-    "lap timer",
-    "pomodoro timer",
-    "workout timer",
-    "kitchen timer"
+    "online timer free",
+    "countdown timer online",
+    "stopwatch online free",
+    "timer with alarm",
+    "lap timer online",
+    "pomodoro timer free",
+    "workout timer tool",
+    "kitchen timer online",
+    "study timer pomodoro",
+    "fullscreen countdown timer",
+    "meeting timer online",
+    "egg timer online"
   ],
   alternates: {
     canonical: `${siteUrl}/timer-stopwatch`

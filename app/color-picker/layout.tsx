@@ -9,14 +9,18 @@ export const metadata: Metadata = {
   description:
     "Pick colors and convert between HEX, RGB, HSL, and CMYK formats. Free online color picker with palette generator and WCAG contrast checker.",
   keywords: [
-    "color picker",
-    "hex to rgb",
-    "rgb to hex",
-    "color converter",
-    "hsl color",
-    "color palette generator",
-    "contrast checker",
-    "wcag color contrast"
+    "color picker online free",
+    "hex to rgb converter",
+    "rgb to hex color code",
+    "color code generator",
+    "hsl to hex converter",
+    "color palette generator free",
+    "wcag contrast checker tool",
+    "find color code from image",
+    "html color picker",
+    "css color picker tool",
+    "color scheme generator",
+    "complementary color finder"
   ],
   alternates: {
     canonical: `${siteUrl}/color-picker`
