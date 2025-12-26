@@ -28,7 +28,7 @@ export function generateMetadata({ params }: Props): Metadata {
       type: "article",
       title: post.title,
       description: post.description,
-      publishedTime: new Date().toISOString(),
+      publishedTime: new Date(post.publishDate).toISOString(),
       authors: ["NoUploadTools"],
       images: [
         {
@@ -93,8 +93,8 @@ export default function BlogPostPage({ params }: Props) {
     description: post.description,
     keywords: post.keywords.join(", "),
     url: `${siteUrl}/blog/${post.slug}/`,
-    datePublished: new Date().toISOString(),
-    dateModified: new Date().toISOString(),
+    datePublished: new Date(post.publishDate).toISOString(),
+    dateModified: new Date(post.publishDate).toISOString(),
     author: {
       "@type": "Organization",
       name: "NoUploadTools",

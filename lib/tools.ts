@@ -276,6 +276,63 @@ export const tools: ToolMeta[] = [
     description: "Encode and decode URLs and query parameters.",
     category: "dev",
     status: "live"
+  },
+  // New high-volume SEO tools added Dec 26, 2024
+  {
+    slug: "png-to-jpg",
+    path: "/png-to-jpg",
+    name: "PNG to JPG",
+    description: "Convert PNG images to JPG format instantly.",
+    category: "misc",
+    status: "live"
+  },
+  {
+    slug: "webp-to-png",
+    path: "/webp-to-png",
+    name: "WebP to PNG",
+    description: "Convert WebP images to PNG format with transparency.",
+    category: "misc",
+    status: "live"
+  },
+  {
+    slug: "image-resizer",
+    path: "/image-resizer",
+    name: "Image Resizer",
+    description: "Resize images to any dimension in your browser.",
+    category: "misc",
+    status: "live"
+  },
+  {
+    slug: "heic-to-jpg",
+    path: "/heic-to-jpg",
+    name: "HEIC to JPG",
+    description: "Convert iPhone HEIC photos to JPG format.",
+    category: "misc",
+    status: "live"
+  },
+  {
+    slug: "exif-remover",
+    path: "/exif-remover",
+    name: "EXIF Remover",
+    description: "Remove metadata from photos including GPS location.",
+    category: "misc",
+    status: "live"
+  },
+  {
+    slug: "svg-to-png",
+    path: "/svg-to-png",
+    name: "SVG to PNG",
+    description: "Convert SVG vector graphics to PNG images.",
+    category: "misc",
+    status: "live"
+  },
+  {
+    slug: "jwt-decoder",
+    path: "/jwt-decoder",
+    name: "JWT Decoder",
+    description: "Decode and inspect JSON Web Tokens instantly.",
+    category: "dev",
+    status: "live"
   }
 ];
 
@@ -284,6 +341,7 @@ export type BlogPost = {
   title: string;
   description: string;
   keywords: string[];
+  publishDate: string;
   content: {
     type: "paragraph" | "heading" | "list";
     text?: string;
@@ -297,6 +355,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Verify Privacy-First Tools: A Complete Security Checklist",
     description:
       "Learn how to check if an online tool truly keeps your data local. Step-by-step guide to verify browser-based privacy claims.",
+    publishDate: "2024-11-20",
     keywords: [
       "privacy first tools",
       "verify online privacy",
@@ -417,6 +476,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Remove Metadata from Documents: Protect Your Hidden Data",
     description:
       "Complete guide to removing hidden metadata from PDFs, images, and Office documents. Learn what metadata reveals and how to clean it.",
+    publishDate: "2024-11-21",
     keywords: [
       "remove metadata from pdf",
       "strip exif data from photos",
@@ -570,6 +630,7 @@ export const blogPosts: BlogPost[] = [
       "Client-Side vs Server-Side Processing: Which is Safer for Your Files?",
     description:
       "Understand the key differences between browser-based and cloud processing tools. Learn why client-side processing protects your data better.",
+    publishDate: "2024-11-22",
     keywords: [
       "client side processing",
       "server side processing",
@@ -709,6 +770,7 @@ export const blogPosts: BlogPost[] = [
       "Why You Should Never Upload Sensitive PDFs to Online Converters: Hidden Dangers",
     description:
       "Discover the risks of uploading confidential PDFs to free online tools. Learn about data harvesting, breaches, and safer alternatives.",
+    publishDate: "2024-11-23",
     keywords: [
       "pdf upload security risks",
       "online pdf converter dangers",
@@ -825,6 +887,7 @@ export const blogPosts: BlogPost[] = [
     title: "The Hidden Cost of Free Online Tools: What You Pay With Your Data",
     description:
       "Uncover how free online tools monetize your data. Learn about tracking, data harvesting, and how to protect yourself while using web tools.",
+    publishDate: "2024-11-24",
     keywords: [
       "free online tools data privacy",
       "how free tools make money",

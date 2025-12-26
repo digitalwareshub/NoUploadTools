@@ -21,6 +21,7 @@
     "@vercel/analytics": "^1.5.0",
     "clsx": "^2.1.1",
     "diff": "^8.0.2",
+    "heic2any": "^0.0.4",
     "js-beautify": "^1.15.4",
     "jszip": "^3.10.1",
     "marked": "^17.0.1",

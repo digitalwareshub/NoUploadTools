@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { BreadcrumbSchema } from "../../components/BreadcrumbSchema";
 
 const siteUrl = "https://nouploadtools.com";
 
@@ -116,6 +117,13 @@ export default function JsonFormatterLayout({
         id="json-formatter-faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Tools", path: "/directory" },
+          { name: "JSON Formatter" }
+        ]}
       />
       {children}
     </>

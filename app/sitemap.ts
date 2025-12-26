@@ -6,7 +6,7 @@ const baseUrl = "https://nouploadtools.com";
 // Content modification dates for accurate lastmod values
 // These should be updated when content actually changes
 const contentDates = {
-  homepage: "2025-11-27",
+  homepage: "2024-11-27",
   imageToPdf: "2024-11-25",
   pdfToImage: "2024-11-27",
   compressPdf: "2024-11-28",
@@ -28,19 +28,27 @@ const contentDates = {
   colorPicker: "2024-11-28",
   uuidGenerator: "2024-11-28",
   urlEncoder: "2024-11-28",
-  // Batch 3 tools added Nov 28, 2025
-  fileEncryptor: "2025-11-28",
-  securePasswordChecker: "2025-11-28",
-  textEncryptor: "2025-11-28",
-  csvConverter: "2025-11-28",
-  regexTester: "2025-11-28",
-  htmlEntityEncoder: "2025-11-28",
-  imageFormatConverter: "2025-11-28",
-  codeBeautifier: "2025-11-28",
-  faviconGenerator: "2025-11-28",
-  unitConverter: "2025-11-28",
-  timerStopwatch: "2025-11-28",
-  svgOptimizer: "2025-11-28",
+  // Batch 3 tools added Nov 28, 2024
+  fileEncryptor: "2024-11-28",
+  securePasswordChecker: "2024-11-28",
+  textEncryptor: "2024-11-28",
+  csvConverter: "2024-11-28",
+  regexTester: "2024-11-28",
+  htmlEntityEncoder: "2024-11-28",
+  imageFormatConverter: "2024-11-28",
+  codeBeautifier: "2024-11-28",
+  faviconGenerator: "2024-11-28",
+  unitConverter: "2024-11-28",
+  timerStopwatch: "2024-11-28",
+  svgOptimizer: "2024-11-28",
+  // New high-volume SEO tools added Dec 26, 2024
+  pngToJpg: "2024-12-26",
+  webpToPng: "2024-12-26",
+  imageResizer: "2024-12-26",
+  heicToJpg: "2024-12-26",
+  exifRemover: "2024-12-26",
+  svgToPng: "2024-12-26",
+  jwtDecoder: "2024-12-26",
   directory: "2024-11-25",
   privacy: "2024-11-20",
   terms: "2024-11-20",
@@ -159,6 +167,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastMod = contentDates.timerStopwatch;
       } else if (t.slug === "svg-optimizer") {
         lastMod = contentDates.svgOptimizer;
+      }
+      // New high-volume SEO tools Dec 26, 2024
+      else if (t.slug === "png-to-jpg") {
+        lastMod = contentDates.pngToJpg;
+      } else if (t.slug === "webp-to-png") {
+        lastMod = contentDates.webpToPng;
+      } else if (t.slug === "image-resizer") {
+        lastMod = contentDates.imageResizer;
+      } else if (t.slug === "heic-to-jpg") {
+        lastMod = contentDates.heicToJpg;
+      } else if (t.slug === "exif-remover") {
+        lastMod = contentDates.exifRemover;
+      } else if (t.slug === "svg-to-png") {
+        lastMod = contentDates.svgToPng;
+      } else if (t.slug === "jwt-decoder") {
+        lastMod = contentDates.jwtDecoder;
       }
 
       return {
