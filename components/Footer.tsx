@@ -98,9 +98,19 @@ export function Footer() {
             </Link>
             <span>© {new Date().getFullYear()}</span>
           </div>
-          <p className="text-sm text-gray-500">
-            Privacy-first browser utilities. All processing happens locally.
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="text-sm text-gray-500">
+              Privacy-first browser utilities. All processing happens locally.
+            </p>
+            <a
+              href="https://ko-fi.com/digiwares"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md bg-[#FF5E5B] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#e54e4b] transition-colors"
+            >
+              Donate ☕
+            </a>
+          </div>
         </div>
       </div>
     </footer>
