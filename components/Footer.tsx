@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="border-t border-gray-200 bg-gray-50">
       <div className="mx-auto max-w-3xl px-4 py-12">
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-2">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {/* PDF Tools */}
           <div>
             <h3 className="mb-4 text-sm font-semibold tracking-tight">
