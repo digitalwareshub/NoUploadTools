@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
+import { trackToolComplete, trackFileDownload } from "../../lib/analytics";
 
 export default function QrGeneratorPage() {
   const [text, setText] = useState<string>("https://nouploadtools.com");
@@ -34,8 +35,8 @@ export default function QrGeneratorPage() {
         });
         setQrDataUrl(dataUrl);
         setError("");
-      } catch (err) {
-        console.error(err);
+        trackToolComplete("qr_generator");
+      } catch {
         setError("Could not generate QR code. Text might be too long.");
         setQrDataUrl("");
       }
@@ -51,6 +52,7 @@ export default function QrGeneratorPage() {
     const link = document.createElement("a");
     link.href = qrDataUrl;
     link.download = "qrcode.png";
+    trackFileDownload("qr_generator", "png");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -79,8 +81,8 @@ export default function QrGeneratorPage() {
       link.click();
       document.body.removeChild(link);
       URL.revokeObjectURL(link.href);
-    } catch (err) {
-      console.error(err);
+    } catch {
+      // download failed
     }
   };
 

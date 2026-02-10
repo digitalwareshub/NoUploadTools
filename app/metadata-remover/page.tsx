@@ -111,8 +111,8 @@ export default function MetadataRemoverPage() {
           cleanedSize: cleanedBlob.size,
           type: isImage ? "image" : "pdf"
         });
-      } catch (err) {
-        console.error(`Error processing ${file.name}:`, err);
+      } catch {
+        // skip failed file
       }
     }
 

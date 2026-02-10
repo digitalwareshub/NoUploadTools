@@ -27,8 +27,7 @@ export default function HeicToJpgPage() {
         setHeic2any(() => module.default as Heic2AnyFn);
         setLibraryLoading(false);
       })
-      .catch((err) => {
-        console.error("Failed to load heic2any:", err);
+      .catch(() => {
         setError(
           "Failed to load HEIC conversion library. Please refresh the page."
         );
@@ -116,8 +115,7 @@ export default function HeicToJpgPage() {
 
       setConvertedUrl(url);
       setConvertedSize(jpegBlob.size);
-    } catch (err) {
-      console.error("Conversion error:", err);
+    } catch {
       setError(
         "Conversion failed. The file may be corrupted or not a valid HEIC image."
       );

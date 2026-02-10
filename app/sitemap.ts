@@ -51,7 +51,9 @@ const contentDates = {
   directory: "2024-12-26",
   privacy: "2024-11-20",
   terms: "2024-11-20",
-  blog: "2024-11-26"
+  blog: "2024-11-26",
+  about: "2026-02-10",
+  contact: "2026-02-10"
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -86,6 +88,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(contentDates.blog),
       changeFrequency: "weekly",
       priority: 0.9
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(contentDates.about),
+      changeFrequency: "monthly",
+      priority: 0.7
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(contentDates.contact),
+      changeFrequency: "monthly",
+      priority: 0.7
     }
   ];
 

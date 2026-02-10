@@ -3,6 +3,13 @@
 import { useCallback, useState, useRef, type ChangeEvent } from "react";
 import { AdPlaceholder } from "../../../components/AdPlaceholder";
 import { Breadcrumbs } from "../../../components/Breadcrumbs";
+import {
+  trackToolStart,
+  trackToolComplete,
+  trackFileDownload,
+  trackFileSelected,
+  trackToolError
+} from "../../../lib/analytics";
 
 type PdfFile = {
   id: string;
@@ -113,7 +120,12 @@ export default function MergePdfPage() {
     });
 
     setMergedBlob(null);
-    setStatus(newFiles.length > 0 ? "Ready to merge" : "No valid PDFs found");
+    if (newFiles.length > 0) {
+      trackFileSelected("merge_pdf", newFiles.length, "pdf");
+      setStatus("Ready to merge");
+    } else {
+      setStatus("No valid PDFs found");
+    }
   };
 
   const handleDrop = async (e: React.DragEvent<HTMLDivElement>) => {
@@ -189,6 +201,8 @@ export default function MergePdfPage() {
 
     setIsMerging(true);
     setStatus("Merging PDFs...");
+    const startTime = Date.now();
+    trackToolStart("merge_pdf");
 
     try {
       const { PDFDocument } = await import("pdf-lib");
@@ -209,9 +223,14 @@ export default function MergePdfPage() {
 
       setMergedBlob(blob);
       setStatus(`Merged ${files.length} PDFs (${totalPages} pages total)`);
-    } catch (err) {
-      console.error(err);
+      trackToolComplete("merge_pdf", {
+        fileCount: files.length,
+        totalPages,
+        processingTimeMs: Date.now() - startTime
+      });
+    } catch {
       setStatus("Error merging PDFs. Please try different files.");
+      trackToolError("merge_pdf", "merge_failed");
     } finally {
       setIsMerging(false);
     }
@@ -229,6 +248,7 @@ export default function MergePdfPage() {
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(link.href);
+    trackFileDownload("merge_pdf", "pdf", Math.round(mergedBlob.size / 1024));
   };
 
   const clearAll = () => {

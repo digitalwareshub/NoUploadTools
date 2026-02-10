@@ -4,6 +4,13 @@ import { PDFDocument, StandardFonts } from "pdf-lib";
 import { useCallback, useState, type ChangeEvent } from "react";
 import { AdPlaceholder } from "../../components/AdPlaceholder";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
+import {
+  trackToolStart,
+  trackToolComplete,
+  trackFileDownload,
+  trackFileSelected,
+  trackToolError
+} from "../../lib/analytics";
 
 type SelectedFile = {
   id: string;
@@ -41,10 +48,13 @@ export default function ImageToPdfPage() {
       });
     }
     setFiles((prev) => [...prev, ...next]);
+    if (next.length > 0) {
+      trackFileSelected("image_to_pdf", next.length, "image");
+    }
     setStatus("Ready");
   };
 
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+  const handleDrop = (e: React.DragEvent<HTMLElement>) => {
     e.preventDefault();
     const list = e.dataTransfer.files;
     if (!list) {
@@ -87,7 +97,7 @@ export default function ImageToPdfPage() {
     setFiles((prev) => prev.filter((f) => f.id !== id));
   };
 
-  const preventDefaults = (e: React.DragEvent<HTMLDivElement>) => {
+  const preventDefaults = (e: React.DragEvent<HTMLElement>) => {
     e.preventDefault();
     e.stopPropagation();
   };
@@ -99,6 +109,8 @@ export default function ImageToPdfPage() {
     }
     setIsConverting(true);
     setStatus("Converting…");
+    const startTime = Date.now();
+    trackToolStart("image_to_pdf");
 
     try {
       const pdfDoc = await PDFDocument.create();
@@ -192,9 +204,14 @@ export default function ImageToPdfPage() {
       URL.revokeObjectURL(url);
 
       setStatus("Done. PDF downloaded.");
-    } catch (err) {
-      console.error(err);
+      trackToolComplete("image_to_pdf", {
+        fileCount: files.length,
+        processingTimeMs: Date.now() - startTime
+      });
+      trackFileDownload("image_to_pdf", "pdf");
+    } catch {
       setStatus("Something went wrong while creating the PDF.");
+      trackToolError("image_to_pdf", "conversion_failed");
     } finally {
       setIsConverting(false);
     }
@@ -238,24 +255,16 @@ export default function ImageToPdfPage() {
       <AdPlaceholder label="In-page ad space" />
 
       <form onSubmit={onSubmit} className="space-y-4">
-        <div
-          role="button"
-          tabIndex={0}
+        <button
+          type="button"
           onDrop={handleDrop}
           onDragOver={preventDefaults}
           onDragEnter={preventDefaults}
           onDragLeave={preventDefaults}
-          className="flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-400 bg-gray-50 px-4 py-12 text-sm text-gray-700 transition-colors hover:border-gray-600 hover:bg-gray-100"
+          className="flex w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-400 bg-gray-50 px-4 py-12 text-sm text-gray-700 transition-colors hover:border-gray-600 hover:bg-gray-100"
           onClick={() => {
             const input = document.getElementById("file-input");
             (input as HTMLInputElement | null)?.click();
-          }}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              const input = document.getElementById("file-input");
-              (input as HTMLInputElement | null)?.click();
-            }
           }}
         >
           <input
@@ -274,7 +283,7 @@ export default function ImageToPdfPage() {
           <span className="mt-2 text-xs text-gray-500">
             Supports JPG and PNG files
           </span>
-        </div>
+        </button>
 
         {files.length > 0 && (
           <div className="space-y-2">

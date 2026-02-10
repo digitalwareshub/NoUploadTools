@@ -79,8 +79,8 @@ export default function HashGeneratorPage() {
       }
 
       setResults(newResults);
-    } catch (err) {
-      console.error(err);
+    } catch {
+      // hash computation failed
     } finally {
       setIsHashing(false);
     }

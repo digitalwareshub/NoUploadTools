@@ -3,6 +3,12 @@
 import { useCallback, useState, useRef, type ChangeEvent } from "react";
 import { AdPlaceholder } from "../../../components/AdPlaceholder";
 import { Breadcrumbs } from "../../../components/Breadcrumbs";
+import {
+  trackToolStart,
+  trackToolComplete,
+  trackFileSelected,
+  trackToolError
+} from "../../../lib/analytics";
 
 type ImageFormat = "jpg" | "png";
 type ConvertedPage = {
@@ -53,6 +59,12 @@ export default function PdfToImagePage() {
     setConvertedPages([]);
     setStatus("Ready to convert");
     setProgress({ current: 0, total: 0 });
+    trackFileSelected(
+      "pdf_to_image",
+      1,
+      "pdf",
+      Math.round(selectedFile.size / 1024)
+    );
   };
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
@@ -88,6 +100,8 @@ export default function PdfToImagePage() {
     setIsConverting(true);
     setConvertedPages([]);
     setStatus("Loading PDF...");
+    const startTime = Date.now();
+    trackToolStart("pdf_to_image");
 
     try {
       // Dynamically import pdfjs-dist
@@ -187,10 +201,13 @@ export default function PdfToImagePage() {
 
       setConvertedPages(pages);
       setStatus(`Done! Converted ${numPages} page${numPages > 1 ? "s" : ""}.`);
-    } catch (err) {
-      console.error("PDF conversion error:", err);
-      const errorMessage = err instanceof Error ? err.message : String(err);
-      setStatus(`Error: ${errorMessage}. Please try a different PDF file.`);
+      trackToolComplete("pdf_to_image", {
+        totalPages: numPages,
+        processingTimeMs: Date.now() - startTime
+      });
+    } catch {
+      setStatus("Error converting PDF. Please try a different PDF file.");
+      trackToolError("pdf_to_image", "conversion_failed");
     } finally {
       setIsConverting(false);
     }
@@ -232,8 +249,7 @@ export default function PdfToImagePage() {
       URL.revokeObjectURL(link.href);
 
       setStatus("ZIP downloaded successfully!");
-    } catch (err) {
-      console.error(err);
+    } catch {
       setStatus("Error creating ZIP file.");
     }
   };

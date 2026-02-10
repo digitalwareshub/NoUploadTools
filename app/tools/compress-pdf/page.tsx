@@ -3,6 +3,13 @@
 import { useCallback, useState, useRef, type ChangeEvent } from "react";
 import { AdPlaceholder } from "../../../components/AdPlaceholder";
 import { Breadcrumbs } from "../../../components/Breadcrumbs";
+import {
+  trackToolStart,
+  trackToolComplete,
+  trackFileDownload,
+  trackFileSelected,
+  trackToolError
+} from "../../../lib/analytics";
 
 type CompressionLevel = "low" | "medium" | "high";
 
@@ -53,6 +60,12 @@ export default function CompressPdfPage() {
     setCompressedBlob(null);
     setPreviewUrl(null);
     setStatus("Ready to compress");
+    trackFileSelected(
+      "compress_pdf",
+      1,
+      "pdf",
+      Math.round(selectedFile.size / 1024)
+    );
   };
 
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
@@ -88,6 +101,8 @@ export default function CompressPdfPage() {
 
     setIsCompressing(true);
     setStatus("Compressing PDF...");
+    const startTime = Date.now();
+    trackToolStart("compress_pdf");
 
     try {
       const { PDFDocument } = await import("pdf-lib");
@@ -131,9 +146,13 @@ export default function CompressPdfPage() {
       }
 
       setStatus("Compression complete!");
-    } catch (err) {
-      console.error(err);
+      trackToolComplete("compress_pdf", {
+        fileCount: 1,
+        processingTimeMs: Date.now() - startTime
+      });
+    } catch {
       setStatus("Error compressing PDF. Please try a different file.");
+      trackToolError("compress_pdf", "compression_failed");
     } finally {
       setIsCompressing(false);
     }
@@ -151,6 +170,11 @@ export default function CompressPdfPage() {
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(link.href);
+    trackFileDownload(
+      "compress_pdf",
+      "pdf",
+      Math.round(compressedBlob.size / 1024)
+    );
   };
 
   const clearFile = () => {

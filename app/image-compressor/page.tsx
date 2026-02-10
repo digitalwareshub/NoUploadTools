@@ -104,8 +104,8 @@ export default function ImageCompressorPage() {
       try {
         const result = await compressImage(file);
         compressed.push(result);
-      } catch (err) {
-        console.error(`Error compressing ${file.name}:`, err);
+      } catch {
+        // skip failed file
       }
     }
 
